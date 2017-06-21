@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
+import { ProfileCoverComponent } from './partials/profile-cover/profile-cover.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileCoverComponent
   ],
   imports: [
     BrowserModule,
