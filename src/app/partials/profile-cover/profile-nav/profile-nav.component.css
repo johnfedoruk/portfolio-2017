@@ -1,0 +1,28 @@
+:host {
+	height: 44px;
+}
+.wrapper {
+	margin-left: 220px;
+	color: #365899;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+	cursor: pointer;
+	float: left;
+	padding: 13px 23px;
+	border-right: 1px solid #e9eaec;
+}
+li.active {
+	color: #4b4f56;
+}
+li:first-child {
+	border-left: 1px solid #e9eaec;
+}

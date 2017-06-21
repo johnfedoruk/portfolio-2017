@@ -8,6 +8,7 @@ import { HeaderComponent } from './partials/header/header.component';
 import { ProfileCoverComponent } from './partials/profile-cover/profile-cover.component';
 import { CoverPhotoComponent } from './partials/profile-cover/cover-photo/cover-photo.component';
 import { ProfilePictureComponent } from './partials/profile-cover/profile-picture/profile-picture.component';
+import { ProfileNavComponent } from './partials/profile-cover/profile-nav/profile-nav.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProfilePictureComponent } from './partials/profile-cover/profile-pictur
     HeaderComponent,
     ProfileCoverComponent,
     CoverPhotoComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
+    ProfileNavComponent
   ],
   imports: [
     BrowserModule,
