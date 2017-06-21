@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { ProfileCoverComponent } from './partials/profile-cover/profile-cover.component';
 import { CoverPhotoComponent } from './partials/profile-cover/cover-photo/cover-photo.component';
+import { ProfilePictureComponent } from './partials/profile-cover/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProfileCoverComponent,
-    CoverPhotoComponent
+    CoverPhotoComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,

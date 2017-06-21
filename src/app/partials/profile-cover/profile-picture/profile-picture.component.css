@@ -1,0 +1,16 @@
+:host {
+	position: absolute;
+	left: 13px;
+	bottom: 13px;
+	background-color: whitesmoke;
+	border: 1px solid rgba(0,0,0,0.4);
+	border-radius: 5px;
+}
+.profile-photo-img {
+	height: 169px;
+	width: 169px;
+	margin: 5px;
+	background-image: url(/assets/images/profile-photos/johnny-london.jpg);
+	background-size: 100%;
+	background-position: 50% 50%;
+}
