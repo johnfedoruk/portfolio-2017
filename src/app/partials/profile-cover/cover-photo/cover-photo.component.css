@@ -4,4 +4,14 @@
 	background-image: url(/assets/images/cover-photos/nerd.jpg);
 	background-position: 50% 50%;
 	background-size: cover;
+	position: relative;
+}
+.name {
+	font-family: Helvetica, Arial, sans-serif;
+	position: absolute;
+	bottom: 20px;
+	font-size: 23px;
+	color: whitesmoke;
+	text-shadow:rgba(0, 0, 0, 0.7) 0px 0px 2px;
+	left: 200px;
 }
