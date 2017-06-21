@@ -12,16 +12,31 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 li {
 	cursor: pointer;
 	float: left;
-	padding: 13px 23px;
+	padding: 13px 23px 0;
 	border-right: 1px solid #e9eaec;
+	position: relative;
+	height: 33px;
 }
 li.active {
 	color: #4b4f56;
+}
+li .caret {
+	display: none;
+}
+li.active>.caret {
+	display: block;
+	position: relative;
+	height: 10px;
+	bottom: -7px;
+	left: 0;
+	right: 0;
+	background-image: url(/assets/images/components/cover-active-arrow.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
 }
 li:first-child {
 	border-left: 1px solid #e9eaec;

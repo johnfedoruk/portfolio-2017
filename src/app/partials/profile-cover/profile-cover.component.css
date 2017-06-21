@@ -2,4 +2,6 @@
 	background-color: whitesmoke;
 	width: 960px;
 	position: relative;
+	border: 1px solid #d3d6da;
+	border-radius: 4px;
 }
