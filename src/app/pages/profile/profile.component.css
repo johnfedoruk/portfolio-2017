@@ -1,0 +1,21 @@
+:host {
+    width: 960px;
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}
+#sidebar, #timeline {
+    background-color: whitesmoke;
+}
+#sidebar {
+    width: 333px;
+    height: 1200px;
+    position: absolute;
+    margin-bottom: 15px;
+}
+#timeline {
+    width: 607px;
+    margin-left: 353px;
+    height: 2000px;
+    margin-bottom: 15px;
+}
