@@ -10,6 +10,7 @@
 }
 .intro-title {
 	font-size: 17px;
+	margin-bottom: 20px;
 }
 .globe-circle-blue {
 	background-color: #4267b1;
@@ -20,4 +21,16 @@
     padding-right: 1px;
     border-radius: 20px;
 	margin-right: 10px;
+}
+.achievements {
+	height: 23px;
+	font-size: 13px;
+}
+.achievements td {
+	vertical-align: top;
+}
+.achievements .fa {
+	color: #a5a9b2;
+	font-size: 11px;
+	margin-right: 5px;
 }
