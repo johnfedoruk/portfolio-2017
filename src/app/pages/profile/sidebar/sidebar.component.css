@@ -8,12 +8,11 @@
 	border: 1px solid #d3d6da;
 	border-radius: 4px;
 }
-.intro-title {
+.sidebar-item-title {
 	font-size: 17px;
 	margin-bottom: 20px;
 }
-.globe-circle-blue {
-	background-color: #4267b1;
+.circle-blue, .circle-lime {
 	color: white;
     padding-left: 6px;
     padding-top: 3px;
@@ -21,6 +20,16 @@
     padding-right: 1px;
     border-radius: 20px;
 	margin-right: 10px;
+}
+.circle-blue {
+	background-color: #4267b1;
+}
+.circle-lime {
+	background-color: #a5d950;
+}
+.sidebar-item-title .fa-image {
+	font-size: 12px;
+	margin-top: -1px;
 }
 .achievements {
 	height: 23px;
@@ -33,4 +42,15 @@
 	color: #a5a9b2;
 	font-size: 11px;
 	margin-right: 5px;
+}
+.photos {
+	text-align: center;
+}
+.photo {
+	display: inline-block;
+	width: 94px;
+	height: 94px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
