@@ -12,3 +12,16 @@ body, html {
 	font-family: Helvetica, Arial, sans-serif;
 	color: #4b4f55;
 }
+hr {
+	border: 0;
+	height: 1px;
+	background-color: #d3d6da;
+}
+a {
+    color: #365896;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
