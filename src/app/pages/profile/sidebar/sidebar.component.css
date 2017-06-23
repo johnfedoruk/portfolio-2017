@@ -8,3 +8,16 @@
 	border: 1px solid #d3d6da;
 	border-radius: 4px;
 }
+.intro-title {
+	font-size: 17px;
+}
+.globe-circle-blue {
+	background-color: #4267b1;
+	color: white;
+    padding-left: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 1px;
+    border-radius: 20px;
+	margin-right: 10px;
+}
