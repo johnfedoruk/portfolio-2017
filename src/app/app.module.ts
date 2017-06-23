@@ -12,6 +12,7 @@ import { ProfilePictureComponent } from './partials/profile-cover/profile-pictur
 import { ProfileNavComponent } from './partials/profile-cover/profile-nav/profile-nav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/profile/sidebar/sidebar.component';
+import { TimelineComponent } from './pages/profile/timeline/timeline.component';
 
 const routes:Routes = [
 	{
@@ -29,7 +30,8 @@ const routes:Routes = [
     ProfilePictureComponent,
     ProfileNavComponent,
     ProfileComponent,
-    SidebarComponent
+    SidebarComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

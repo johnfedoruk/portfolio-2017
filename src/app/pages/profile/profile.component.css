@@ -4,19 +4,19 @@
     position: relative;
     margin-top: 15px;
 }
-app-sidebar, #timeline {
+app-sidebar, app-timeline {
+	display: block;
     background-color: whitesmoke;
+    margin-bottom: 15px;
+	padding-top: 1px;
 }
 app-sidebar {
-	display: block;
     width: 333px;
     height: 1200px;
     position: absolute;
-    margin-bottom: 15px;
 }
-#timeline {
+app-timeline {
     width: 607px;
     margin-left: 353px;
     height: 2000px;
-    margin-bottom: 15px;
 }
