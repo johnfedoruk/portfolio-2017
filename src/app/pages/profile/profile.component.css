@@ -4,10 +4,11 @@
     position: relative;
     margin-top: 15px;
 }
-#sidebar, #timeline {
+app-sidebar, #timeline {
     background-color: whitesmoke;
 }
-#sidebar {
+app-sidebar {
+	display: block;
     width: 333px;
     height: 1200px;
     position: absolute;

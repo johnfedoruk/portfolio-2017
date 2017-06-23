@@ -9,7 +9,7 @@ declare const $: any;
 })
 export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
 
-	readonly STICKY:string = "#sidebar";
+	readonly STICKY:string = "app-sidebar";
 
 	constructor() { }
 

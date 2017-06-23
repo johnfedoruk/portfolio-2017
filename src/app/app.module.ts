@@ -11,6 +11,7 @@ import { CoverPhotoComponent } from './partials/profile-cover/cover-photo/cover-
 import { ProfilePictureComponent } from './partials/profile-cover/profile-picture/profile-picture.component';
 import { ProfileNavComponent } from './partials/profile-cover/profile-nav/profile-nav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/profile/sidebar/sidebar.component';
 
 const routes:Routes = [
 	{
@@ -27,7 +28,8 @@ const routes:Routes = [
     CoverPhotoComponent,
     ProfilePictureComponent,
     ProfileNavComponent,
-    ProfileComponent
+    ProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
