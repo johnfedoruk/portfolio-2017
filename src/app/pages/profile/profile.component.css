@@ -6,17 +6,17 @@
 }
 app-sidebar, app-timeline {
 	display: block;
-    background-color: whitesmoke;
     margin-bottom: 15px;
 	padding-top: 1px;
 }
 app-sidebar {
     width: 333px;
-    height: 1200px;
-    position: absolute;
+    position: static;
+	    vertical-align: baseline;
+    float: left;
+	overflow-y: visible
 }
 app-timeline {
     width: 607px;
     margin-left: 353px;
-    height: 2000px;
 }

@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngAfterViewInit() {
 		// init sticky kit
 		$(this.STICKY).stick_in_parent({
-			recalc_every: 100,
+			recalc_every: 10,
 			offset_top: 15
 		});
 	}

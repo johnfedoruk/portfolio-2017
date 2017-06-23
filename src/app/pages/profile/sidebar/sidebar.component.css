@@ -1,0 +1,10 @@
+.sidebar-item {
+	text-align: left;
+	display:block;
+	margin-bottom:15px;
+	width: calc( 100% - 40px );
+	background-color:whitesmoke;
+	padding: 20px;
+	border: 1px solid #d3d6da;
+	border-radius: 4px;
+}
