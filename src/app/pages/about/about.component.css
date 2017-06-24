@@ -27,7 +27,7 @@
 .about-menu {
 	padding-top: 15px;
 	display: inline-block;
-	width: 300px;
+	width: 200px;
 }
 .about-menu ul {
 	list-style: none;
@@ -54,7 +54,7 @@
 }
 .about-container {
 	display: inline-block;
-	width: calc( 100% - 310px );
+	width: calc( 100% - 210px );
 	min-height: 260px;
 	border-left: 1px solid #d3d6da;
 }
