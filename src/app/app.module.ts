@@ -21,6 +21,7 @@ import { WorkComponent } from './pages/about/work/work.component';
 import { EducationComponent } from './pages/about/education/education.component';
 import { ProjectsComponent } from './pages/about/projects/projects.component';
 import { PlacesComponent } from './pages/about/places/places.component';
+import { ContactComponent } from './pages/about/contact/contact.component';
 
 const routes:Routes = [
 	{
@@ -55,6 +56,10 @@ const routes:Routes = [
 			{
 				path:"places",
 				component:PlacesComponent
+			},
+			{
+				path:"contact",
+				component:ContactComponent
 			}
 		]
 	},
@@ -81,7 +86,8 @@ const routes:Routes = [
 	WorkComponent,
 	EducationComponent,
 	ProjectsComponent,
-	PlacesComponent
+	PlacesComponent,
+	ContactComponent
   ],
   imports: [
     BrowserModule,
