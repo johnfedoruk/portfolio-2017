@@ -19,6 +19,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent } from './pages/about/overview/overview.component';
 import { WorkComponent } from './pages/about/work/work.component';
 import { EducationComponent } from './pages/about/education/education.component';
+import { ProjectsComponent } from './pages/about/projects/projects.component';
 
 const routes:Routes = [
 	{
@@ -45,6 +46,10 @@ const routes:Routes = [
 			{
 				path:"education",
 				component:EducationComponent
+			},
+			{
+				path:"projects",
+				component:ProjectsComponent
 			}
 		]
 	},
@@ -69,7 +74,8 @@ const routes:Routes = [
 	AboutComponent,
 	OverviewComponent,
 	WorkComponent,
-	EducationComponent
+	EducationComponent,
+	ProjectsComponent
   ],
   imports: [
     BrowserModule,
