@@ -1,0 +1,10 @@
+:host {
+    width: 960px;
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+}
+.error-wrapper {
+	background-color: whitesmoke;
+	padding: 30px 0;
+}
