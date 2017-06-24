@@ -1,0 +1,24 @@
+.projects-wrapper {
+	display: block;
+	width: calc( 100% - 61px );
+	padding: 30px;
+}
+.logo {
+	width: 40px;
+	height: 40px;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.title {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+td {
+	vertical-align: top;
+	font-size: 13px;
+	padding-bottom: 20px;
+}
+td:not(:first-child) {
+	padding-left: 5px;
+}
