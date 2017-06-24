@@ -12,7 +12,7 @@
 	font-size: 17px;
 	margin-bottom: 20px;
 }
-.circle-blue, .circle-lime {
+.circle {
 	color: white;
     padding-left: 6px;
     padding-top: 3px;
@@ -27,9 +27,18 @@
 .circle-lime {
 	background-color: #a5d950;
 }
+.circle-red {
+	background-color: #f50e6a;
+}
+.circle-gray {
+	background-color: #a9a9a9;
+}
 .sidebar-item-title .fa-image {
 	font-size: 12px;
 	margin-top: -1px;
+}
+.sidebar-item-title .fa-github {
+	margin-right: -1px;
 }
 .achievements {
 	height: 23px;

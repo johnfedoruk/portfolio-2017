@@ -13,6 +13,7 @@ import { ProfileNavComponent } from './partials/profile-cover/profile-nav/profil
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/profile/sidebar/sidebar.component';
 import { TimelineComponent } from './pages/profile/timeline/timeline.component';
+import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
 
 const routes:Routes = [
 	{
@@ -37,7 +38,8 @@ const routes:Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-	RouterModule.forRoot(routes)
+	RouterModule.forRoot(routes),
+	GitGraphModule
   ],
   providers: [],
   bootstrap: [AppComponent]
