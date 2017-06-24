@@ -72,6 +72,16 @@
 
 <div class="sidebar-item">
 	<div class="sidebar-item-title">
+		<span class="circle circle-gray">
+			<i class="fa fa-github"></i>
+		</span>
+		Github
+	</div>
+	<git-graph></git-graph>
+</div>
+
+<div class="sidebar-item">
+	<div class="sidebar-item-title">
 		<span class="circle circle-lime">
 			<i class="fa fa-image"></i>
 		</span>
@@ -88,18 +98,4 @@
 		<div class="photo" style="background-image:url(https://surplus.calgary.ca/img/placeholder.jpg)"></div>
 		<div class="photo" style="background-image:url(https://surplus.calgary.ca/img/placeholder.jpg)"></div>
 	</div>
-</div>
-
-<div class="sidebar-item">
-	<div class="sidebar-item-title">
-		<span class="circle circle-gray">
-			<i class="fa fa-github"></i>
-		</span>
-		Github
-	</div>
-	<git-graph></git-graph>
-</div>
-
-<div class="sidebar-item" *ngFor="let i of array">
-	{{i}}
 </div>
