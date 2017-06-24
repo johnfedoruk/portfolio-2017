@@ -12,3 +12,6 @@
 	display: inline-block;
 	margin: 0 auto;
 }
+app-profile-cover {
+	margin-left: 5px !important;
+}
