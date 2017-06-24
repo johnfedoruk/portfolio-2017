@@ -19,4 +19,5 @@ app-sidebar {
 app-timeline {
     width: 607px;
     margin-left: 353px;
+	padding-bottom: 18px;
 }
