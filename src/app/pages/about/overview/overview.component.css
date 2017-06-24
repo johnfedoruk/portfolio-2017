@@ -1,0 +1,29 @@
+.overview-wrapper {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.left, .right {
+	display: inline-block;
+	vertical-align: top;
+	margin: 30px auto;
+	text-align: left;
+}
+.left {
+	width: 300px;
+}
+.right {
+	width: 300px;
+}
+.logo {
+	width: 40px;
+	height: 40px;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+td {
+	font-size: 13px;
+	padding-bottom: 20px;
+	vertical-align: top;
+}

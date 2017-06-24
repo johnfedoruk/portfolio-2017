@@ -28,7 +28,6 @@
 	padding-top: 15px;
 	display: inline-block;
 	width: 300px;
-	height: 500px;
 }
 .about-menu ul {
 	list-style: none;
@@ -56,6 +55,5 @@
 .about-container {
 	display: inline-block;
 	width: calc( 100% - 310px );
-	height: 600px;
 	border-left: 1px solid #d3d6da;
 }
