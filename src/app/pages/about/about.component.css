@@ -55,5 +55,6 @@
 .about-container {
 	display: inline-block;
 	width: calc( 100% - 310px );
+	min-height: 260px;
 	border-left: 1px solid #d3d6da;
 }
