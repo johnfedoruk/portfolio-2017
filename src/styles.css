@@ -28,3 +28,9 @@ a:hover {
 small {
 	color: #90949c;
 }
+.border {
+	border: 1px solid #d3d6da;
+}
+.radius {
+	border-radius: 4px
+}
