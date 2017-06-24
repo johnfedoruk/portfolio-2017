@@ -15,11 +15,16 @@ import { SidebarComponent } from './pages/profile/sidebar/sidebar.component';
 import { TimelineComponent } from './pages/profile/timeline/timeline.component';
 import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
 import { Error404Component } from './pages/error-404/error-404.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes:Routes = [
 	{
 		path:"",
 		component:ProfileComponent
+	},
+	{
+		path:"about",
+		component:AboutComponent
 	},
 	{
 		path:"**",
@@ -38,7 +43,8 @@ const routes:Routes = [
     ProfileComponent,
     SidebarComponent,
     TimelineComponent,
-	Error404Component
+	Error404Component,
+	AboutComponent
   ],
   imports: [
     BrowserModule,
