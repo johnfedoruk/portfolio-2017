@@ -16,6 +16,7 @@ import { TimelineComponent } from './pages/profile/timeline/timeline.component';
 import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
 import { Error404Component } from './pages/error-404/error-404.component';
 import { AboutComponent } from './pages/about/about.component';
+import { OverviewComponent } from './pages/about/overview/overview.component';
 
 const routes:Routes = [
 	{
@@ -24,7 +25,18 @@ const routes:Routes = [
 	},
 	{
 		path:"about",
-		component:AboutComponent
+		component:AboutComponent,
+		children: [
+			{
+				path:"",
+				redirectTo:"overview",
+				pathMatch:"full"
+			},
+			{
+				path:"overview",
+				component:OverviewComponent
+			}
+		]
 	},
 	{
 		path:"**",
@@ -44,7 +56,8 @@ const routes:Routes = [
     SidebarComponent,
     TimelineComponent,
 	Error404Component,
-	AboutComponent
+	AboutComponent,
+	OverviewComponent
   ],
   imports: [
     BrowserModule,

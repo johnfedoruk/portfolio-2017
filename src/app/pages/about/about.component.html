@@ -5,15 +5,10 @@
 	</div>
 	<div class="about-menu">
 		<ul>
-			<li class="active">Overview</li>
-			<li>Work</li>
-			<li>Education</li>
-			<li>Projects</li>
-			<li>Contact</li>
-			<li>Places</li>
+			<li [routerLink]="route.link" routerLinkActive="active" *ngFor="let route of routes">{{route.title}}</li>
 		</ul>
 	</div>
 	<div class="about-container">
-
+		<router-outlet></router-outlet>
 	</div>
 </div>

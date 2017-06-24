@@ -40,10 +40,15 @@
     padding: 7px 23px 7px;
 	font-size: 15px;
 	cursor: pointer;
+	user-select: none;
 }
 .about-menu li.active {
+	padding-left: 20px;
 	border-left: 3px solid #3b5997;
 	font-weight: bold;
+}
+.about-menu li:focus {
+	outline: none;
 }
 .about-menu li:hover {
 	color: #0f0f0f;
