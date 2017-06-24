@@ -1,0 +1,33 @@
+.contact-wrapper {
+	padding: 30px;
+}
+.title {
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dddfe1;
+	color: #90949b;
+}
+/*tr:not(:last-child) {*/
+table {
+	width: 100%;
+    border-collapse: collapse; 
+}
+tr {
+	border-bottom: 1px solid #dddfe1;
+}
+td {
+	padding-top:17px;
+	padding-bottom: 17px;
+	vertical-align: top;
+}
+td:first-child {
+	width: 260px;
+}
+td:not(:first-child) {
+
+}
+.contact-entry:not(:last-child) {
+	padding-bottom: 7px;
+}
