@@ -17,6 +17,7 @@ import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
 import { Error404Component } from './pages/error-404/error-404.component';
 import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent } from './pages/about/overview/overview.component';
+import { WorkComponent } from './pages/about/work/work.component';
 
 const routes:Routes = [
 	{
@@ -35,6 +36,10 @@ const routes:Routes = [
 			{
 				path:"overview",
 				component:OverviewComponent
+			},
+			{
+				path:"work",
+				component:WorkComponent
 			}
 		]
 	},
@@ -57,7 +62,8 @@ const routes:Routes = [
     TimelineComponent,
 	Error404Component,
 	AboutComponent,
-	OverviewComponent
+	OverviewComponent,
+	WorkComponent
   ],
   imports: [
     BrowserModule,
