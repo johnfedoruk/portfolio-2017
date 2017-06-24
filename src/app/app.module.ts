@@ -16,12 +16,12 @@ import { TimelineComponent } from './pages/profile/timeline/timeline.component';
 import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
 import { Error404Component } from './pages/error-404/error-404.component';
 import { AboutComponent } from './pages/about/about.component';
-import { OverviewComponent } from './pages/about/overview/overview.component';
-import { WorkComponent } from './pages/about/work/work.component';
-import { EducationComponent } from './pages/about/education/education.component';
-import { ProjectsComponent } from './pages/about/projects/projects.component';
-import { PlacesComponent } from './pages/about/places/places.component';
-import { ContactComponent } from './pages/about/contact/contact.component';
+import { OverviewComponent as AboutOverviewComponent } from './pages/about/overview/overview.component';
+import { WorkComponent as AboutWorkComponent } from './pages/about/work/work.component';
+import { EducationComponent as AboutEducationComponent } from './pages/about/education/education.component';
+import { ProjectsComponent as AboutProjectsComponent } from './pages/about/projects/projects.component';
+import { PlacesComponent as AboutPlacesComponent } from './pages/about/places/places.component';
+import { ContactComponent as AboutContactComponent } from './pages/about/contact/contact.component';
 
 const routes:Routes = [
 	{
@@ -39,27 +39,27 @@ const routes:Routes = [
 			},
 			{
 				path:"overview",
-				component:OverviewComponent
+				component:AboutOverviewComponent
 			},
 			{
 				path:"work",
-				component:WorkComponent
+				component:AboutWorkComponent
 			},
 			{
 				path:"education",
-				component:EducationComponent
+				component:AboutEducationComponent
 			},
 			{
 				path:"projects",
-				component:ProjectsComponent
+				component:AboutProjectsComponent
 			},
 			{
 				path:"places",
-				component:PlacesComponent
+				component:AboutPlacesComponent
 			},
 			{
 				path:"contact",
-				component:ContactComponent
+				component:AboutContactComponent
 			}
 		]
 	},
@@ -82,12 +82,12 @@ const routes:Routes = [
     TimelineComponent,
 	Error404Component,
 	AboutComponent,
-	OverviewComponent,
-	WorkComponent,
-	EducationComponent,
-	ProjectsComponent,
-	PlacesComponent,
-	ContactComponent
+	AboutOverviewComponent,
+	AboutWorkComponent,
+	AboutEducationComponent,
+	AboutProjectsComponent,
+	AboutPlacesComponent,
+	AboutContactComponent
   ],
   imports: [
     BrowserModule,
