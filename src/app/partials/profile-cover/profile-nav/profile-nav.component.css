@@ -20,6 +20,10 @@ li {
 	border-right: 1px solid #e9eaec;
 	position: relative;
 	height: 33px;
+	user-select: none;
+}
+li:focus {
+	outline: none;
 }
 li.active {
 	color: #4b4f56;

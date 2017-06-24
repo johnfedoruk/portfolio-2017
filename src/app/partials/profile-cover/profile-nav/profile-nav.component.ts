@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile-nav',
-  templateUrl: './profile-nav.component.html',
-  styleUrls: ['./profile-nav.component.css']
+	selector: 'app-profile-nav',
+	templateUrl: './profile-nav.component.html',
+	styleUrls: ['./profile-nav.component.css']
 })
 export class ProfileNavComponent implements OnInit {
 
-  constructor() { }
+	routes:Array<{title:string;link:string}> = [
+		{
+			title:"Home",
+			link:"/"
+		},
+		{
+			title:"About",
+			link:"/about"
+		},
+		{
+			title:"Code",
+			link:"/code"
+		},
+		{
+			title:"Blog",
+			link:"/blog"
+		},
+		{
+			title:"Contact",
+			link:"/contact"
+		}
+	];
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() {
+	}
 
 }
