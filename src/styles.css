@@ -25,3 +25,6 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+small {
+	color: #90949c;
+}
