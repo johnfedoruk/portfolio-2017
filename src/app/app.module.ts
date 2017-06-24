@@ -18,6 +18,7 @@ import { Error404Component } from './pages/error-404/error-404.component';
 import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent } from './pages/about/overview/overview.component';
 import { WorkComponent } from './pages/about/work/work.component';
+import { EducationComponent } from './pages/about/education/education.component';
 
 const routes:Routes = [
 	{
@@ -40,6 +41,10 @@ const routes:Routes = [
 			{
 				path:"work",
 				component:WorkComponent
+			},
+			{
+				path:"education",
+				component:EducationComponent
 			}
 		]
 	},
@@ -63,7 +68,8 @@ const routes:Routes = [
 	Error404Component,
 	AboutComponent,
 	OverviewComponent,
-	WorkComponent
+	WorkComponent,
+	EducationComponent
   ],
   imports: [
     BrowserModule,
