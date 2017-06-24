@@ -1,0 +1,7 @@
+.contribution-info {
+	margin-top: 30px;
+}
+.git-wrapper {
+	transform: scale(0.45) translateX(-205px) translateY(-40px);
+	margin-bottom: -30px;
+}
