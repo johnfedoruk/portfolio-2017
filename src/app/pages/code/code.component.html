@@ -1,0 +1,13 @@
+<div class="code-wrapper border">
+	<div class="code-title cream-bg">
+		<i class="fa fa-code"></i> Code
+	</div>
+	<div class="code-menu">
+		<ul>
+			<li [routerLink]="route.link" routerLinkActive="active" *ngFor="let route of routes">{{route.title}}</li>
+		</ul>
+	</div>
+	<div class="code-container">
+		<router-outlet></router-outlet>
+	</div>
+</div>

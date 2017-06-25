@@ -22,6 +22,9 @@ import { EducationComponent as AboutEducationComponent } from './pages/about/edu
 import { ProjectsComponent as AboutProjectsComponent } from './pages/about/projects/projects.component';
 import { PlacesComponent as AboutPlacesComponent } from './pages/about/places/places.component';
 import { ContactComponent as AboutContactComponent } from './pages/about/contact/contact.component';
+import { CodeComponent } from './pages/code/code.component';
+import { FilesComponent } from './pages/code/files/files.component';
+import { OverviewComponent as CodeOverviewComponent } from './pages/code/overview/overview.component';
 
 const routes:Routes = [
 	{
@@ -64,6 +67,20 @@ const routes:Routes = [
 		]
 	},
 	{
+		path:"code",
+		component:CodeComponent,
+		children: [
+			{
+				path:"",
+				component:CodeOverviewComponent
+			},
+			{
+				path:"**",
+				component:FilesComponent
+			}
+		]
+	},
+	{
 		path:"**",
 		component:Error404Component
 	}
@@ -87,7 +104,10 @@ const routes:Routes = [
 	AboutEducationComponent,
 	AboutProjectsComponent,
 	AboutPlacesComponent,
-	AboutContactComponent
+	AboutContactComponent,
+	CodeComponent,
+	FilesComponent,
+	CodeOverviewComponent
   ],
   imports: [
     BrowserModule,
