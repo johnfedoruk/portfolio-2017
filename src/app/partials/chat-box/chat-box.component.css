@@ -140,6 +140,7 @@
 	display: block;
 }
 .input-area {
+	border-top: 1px solid #d3d6da;
 	width: 250px;
 	display: inline-block;
 	border-left: 1px solid #d3d6da;
