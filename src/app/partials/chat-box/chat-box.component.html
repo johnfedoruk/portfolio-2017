@@ -1,3 +1,8 @@
-<div class="chat-tab border">
+<div class="chat-tab border" (click)="onOpenChatBox()" *ngIf="!chatBoxOpen">
 	<i class="fa" [ngClass]="online?'fa-circle':'fa-circle-o'"></i> John Fedoruk
+</div>
+<div class="chat-box border" *ngIf="chatBoxOpen">
+	<div class="header" (click)="onCloseChatBox()">
+		<i class="fa" [ngClass]="online?'fa-circle':'fa-circle-o'"></i> John Fedoruk <i class="fa fa-close"></i>
+	</div>
 </div>

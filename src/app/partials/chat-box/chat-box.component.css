@@ -11,15 +11,43 @@
 	background-color: #f6f7f8;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	font-weight: bold;
 }
-.chat-tab .fa {
+.chat-tab .fa,.chat-box .header .fa {
 	margin-left: 7px;
 	margin-right: 5px;
 	transform: translateY(-1px);
 	font-size: 9px;
 }
-.chat-tab .fa-circle {
+.fa-circle {
 	color: lime;
 }
-.chat-tab .fa-circle-o {
+.fa-circle-o {
+}
+
+.chat-box {
+	position: fixed;
+	bottom: 0;
+	right: 20px;
+	width: 250px;
+	height: 400px;
+	background-color:white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.chat-box .header {
+	height: 27px;
+	font-size: 13px;
+	line-height: 27px;
+	cursor: pointer;
+	user-select: none;
+	background-color: #f6f7f8;
+	font-weight: bold;
+	position: relative;
+}
+.chat-box .header .fa-close {
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 13px;
 }
