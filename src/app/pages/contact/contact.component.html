@@ -16,18 +16,17 @@
 			</div>
 		</div>
 		<div class="message" *ngFor="let message of messages" [ngClass]="message.sender==OWNER?'owner':'user'">
-			<div class="bubble">
-				{{message.message}}
-			</div>
+			<div class="bubble">{{message.message}}</div>
 		</div>
 	</perfect-scrollbar>
 	<div class="input-wrapper">
 		<div class="input-area">
 			<textarea placeholder="Let's talk..." [(ngModel)]="input" (keydown.enter)="onSendMessage()"></textarea>
 			<span class="input-buttons">
-				<div class="input-button">
+				<label for="file" class="input-button">
 					<i class="fa fa-paperclip"></i>
-				</div>
+				</label>
+				<input id="file" name="file" type="file" (change)="onFileAttach($event)">
 				<div class="input-button" (click)="onSendMessage()">
 					<i class="fa fa-send"></i>
 				</div>

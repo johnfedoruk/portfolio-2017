@@ -82,6 +82,9 @@
 	margin: 5px;
 	font-size: 13px;
 	line-height: 17px;
+
+	direction: ltr;
+	white-space: pre-wrap;
 }
 .message.owner > .bubble {
 	background-color: #f1f0e9;
@@ -122,6 +125,7 @@ textarea:focus {
 	width: 54px;
 }
 .input-button {
+	display: inline-block;
 	text-align: center;
 	height: 20px;
 	padding-top: 7px;
@@ -137,4 +141,7 @@ textarea:focus {
 }
 .input-button:active {
 	color: #0084fe;
+}
+#file {
+	display: none;
 }

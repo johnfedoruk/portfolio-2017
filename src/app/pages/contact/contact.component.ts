@@ -33,9 +33,7 @@ export class ContactComponent implements OnInit {
 		}
 	}
 
-	public onSendMessage(e:Event):boolean {
-		if(e)
-			e.preventDefault();
+	public onSendMessage():boolean {
 		if(!this.input||this.input.length<1)
 			return false;
 		this.onNewMessage({
@@ -49,6 +47,16 @@ export class ContactComponent implements OnInit {
 			this.onNewMessage(this.randomMessage(OWNER));
 		},Math.floor(Math.random()*5000));
 		return false;
+	}
+
+	public onFileAttach($event:any) {
+		const FILE = $event.target.files[0];
+		console.log(FILE);
+		this.onNewMessage({
+			date: new Date(),
+			message:`attached new file '${FILE.name}'\n${Math.floor(FILE.size/1000)}kB`,
+			sender:USER
+		});
 	}
 
 	private randomMessage(sender:string=this.randomSender()):Message {
