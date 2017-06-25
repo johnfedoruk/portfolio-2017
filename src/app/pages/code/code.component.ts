@@ -9,6 +9,10 @@ export class CodeComponent implements OnInit {
 
 	routes: Array<{ title: string; link: string }> = [
 		{
+			title:"Atmega169 Preemptive OS",
+			link:"atmega169-preemptive-os"
+		},
+		{
 			title:"CTR DRBG",
 			link:"ctr-drbg"
 		},
