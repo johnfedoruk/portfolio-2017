@@ -64,7 +64,6 @@ export class ContactComponent implements OnInit {
 	private scrollToBottom(): void {
         try {
 			setTimeout(()=>{
-				console.log(this.messageContainer);
 	            this.messageContainer.elementRef.nativeElement.scrollTop = this.messageContainer.elementRef.nativeElement.scrollHeight;
 			},100);
         } catch(err) { }                 
