@@ -3,6 +3,18 @@
 		<i class="fa fa-comments"></i> Messages
 	</div>
 	<perfect-scrollbar class="container" [config]="config" class="messages cream-bg" #messageContainer>
+		<div class="profile-block">
+			<div class="profile-pic" style="background-image:url(/assets/images/profile-photos/johnny-london.jpg)">
+			</div>
+			<div class="profile-info">
+				<div class="name">
+					{{OWNER}}
+				</div>
+				<div class="title">
+					Sofware Engineer
+				</div>
+			</div>
+		</div>
 		<div class="message" *ngFor="let message of messages" [ngClass]="message.sender==OWNER?'owner':'user'">
 			<div class="bubble">
 				{{message.message}}
