@@ -28,6 +28,7 @@ import { CodeComponent } from './pages/code/code.component';
 import { FilesComponent } from './pages/code/files/files.component';
 import { OverviewComponent as CodeOverviewComponent } from './pages/code/overview/overview.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ChatBoxComponent } from './partials/chat-box/chat-box.component';
 
 const routes: Routes = [
 	{
@@ -119,7 +120,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		CodeComponent,
 		FilesComponent,
 		CodeOverviewComponent,
-		ContactComponent
+		ContactComponent,
+		ChatBoxComponent
 	],
 	imports: [
 		BrowserModule,
