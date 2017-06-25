@@ -21,10 +21,6 @@ export class ProfileNavComponent implements OnInit {
 			link:"/code"
 		},
 		{
-			title:"Blog",
-			link:"/blog"
-		},
-		{
 			title:"Contact",
 			link:"/contact"
 		}
