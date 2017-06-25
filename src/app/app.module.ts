@@ -25,6 +25,7 @@ import { ContactComponent as AboutContactComponent } from './pages/about/contact
 import { CodeComponent } from './pages/code/code.component';
 import { FilesComponent } from './pages/code/files/files.component';
 import { OverviewComponent as CodeOverviewComponent } from './pages/code/overview/overview.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes:Routes = [
 	{
@@ -81,6 +82,10 @@ const routes:Routes = [
 		]
 	},
 	{
+		path:"contact",
+		component:ContactComponent
+	},
+	{
 		path:"**",
 		component:Error404Component
 	}
@@ -107,7 +112,8 @@ const routes:Routes = [
 	AboutContactComponent,
 	CodeComponent,
 	FilesComponent,
-	CodeOverviewComponent
+	CodeOverviewComponent,
+	ContactComponent
   ],
   imports: [
     BrowserModule,

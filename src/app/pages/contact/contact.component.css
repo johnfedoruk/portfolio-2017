@@ -1,0 +1,109 @@
+:host {
+    width: 960px;
+    display: inline-block;
+    position: relative;
+    margin-top: 15px;
+	text-align: left;
+	padding-bottom: 15px;
+}
+.contact-wrapper {
+	text-align: center;
+	background-color: whitesmoke;
+}
+.contact-title {
+	text-align: left;
+	padding-top: 15px;
+	padding-bottom: 13px;
+	font-size: 20px;
+	border-bottom: 1px solid #d3d6da;
+	font-weight: bold;
+}
+.contact-title .fa-comments {
+	margin-left: 23px;
+	margin-right: 13px;
+	color: #90949c;
+}
+.messages {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	width: 400px;
+    height: calc( 100vh - 560px );
+	border-left: 1px solid #d3d6da;
+	border-right: 1px solid #d3d6da;
+	margin-bottom: -4px;
+	overflow: scroll;
+}
+.message.owner {
+	text-align: left;
+}
+.message.user {
+	text-align: right;
+}
+.bubble {
+	text-align: left;
+	display: inline-block;
+	width: auto;
+	max-width: 60%;
+	word-break: break-all;
+	padding: 7px;
+	border-radius: 10px;
+	margin: 5px;
+	font-size: 13px;
+	line-height: 17px;
+}
+.message.owner > .bubble {
+	background-color: #f1f0e9;
+	color: black;
+}
+.message.user > .bubble {
+	background-color: #0084fe;
+	color: white;
+}
+.input-wrapper, .input-area {
+	height: 60px;
+}
+.input-wrapper {
+	display: block;
+}
+.input-area {
+	width: 400px;
+	display: inline-block;
+	border-left: 1px solid #d3d6da;
+	border-right: 1px solid #d3d6da;
+	text-align: left;
+}
+.input-area textarea {
+	background-color: transparent;
+    height: 49px;
+    resize: none;
+    padding: 0;
+    margin: 5px;
+    border: 0;
+	width: 330px;
+}
+textarea:focus {
+	outline: none;
+}
+.input-buttons {
+	vertical-align: top;
+	display: inline-block;
+	width: 54px;
+}
+.input-button {
+	text-align: center;
+	height: 20px;
+	padding-top: 7px;
+	width: 100%;;
+	cursor: pointer;
+}
+.input-button .fa {
+	vertical-align: middle;
+	font-size: 20px;
+}
+.input-button:hover {
+	color: #3b5997;
+}
+.input-button:active {
+	color: #0084fe;
+}
