@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -27,102 +29,107 @@ import { FilesComponent } from './pages/code/files/files.component';
 import { OverviewComponent as CodeOverviewComponent } from './pages/code/overview/overview.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
-const routes:Routes = [
+const routes: Routes = [
 	{
-		path:"",
-		component:ProfileComponent
+		path: "",
+		component: ProfileComponent
 	},
 	{
-		path:"about",
-		component:AboutComponent,
+		path: "about",
+		component: AboutComponent,
 		children: [
 			{
-				path:"",
-				redirectTo:"overview",
-				pathMatch:"full"
+				path: "",
+				redirectTo: "overview",
+				pathMatch: "full"
 			},
 			{
-				path:"overview",
-				component:AboutOverviewComponent
+				path: "overview",
+				component: AboutOverviewComponent
 			},
 			{
-				path:"work",
-				component:AboutWorkComponent
+				path: "work",
+				component: AboutWorkComponent
 			},
 			{
-				path:"education",
-				component:AboutEducationComponent
+				path: "education",
+				component: AboutEducationComponent
 			},
 			{
-				path:"projects",
-				component:AboutProjectsComponent
+				path: "projects",
+				component: AboutProjectsComponent
 			},
 			{
-				path:"places",
-				component:AboutPlacesComponent
+				path: "places",
+				component: AboutPlacesComponent
 			},
 			{
-				path:"contact",
-				component:AboutContactComponent
+				path: "contact",
+				component: AboutContactComponent
 			}
 		]
 	},
 	{
-		path:"code",
-		component:CodeComponent,
+		path: "code",
+		component: CodeComponent,
 		children: [
 			{
-				path:"",
-				component:CodeOverviewComponent
+				path: "",
+				component: CodeOverviewComponent
 			},
 			{
-				path:"**",
-				component:FilesComponent
+				path: "**",
+				component: FilesComponent
 			}
 		]
 	},
 	{
-		path:"contact",
-		component:ContactComponent
+		path: "contact",
+		component: ContactComponent
 	},
 	{
-		path:"**",
-		component:Error404Component
+		path: "**",
+		component: Error404Component
 	}
 ]
 
+const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+	suppressScrollX: true
+};
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ProfileCoverComponent,
-    CoverPhotoComponent,
-    ProfilePictureComponent,
-    ProfileNavComponent,
-    ProfileComponent,
-    SidebarComponent,
-    TimelineComponent,
-	Error404Component,
-	AboutComponent,
-	AboutOverviewComponent,
-	AboutWorkComponent,
-	AboutEducationComponent,
-	AboutProjectsComponent,
-	AboutPlacesComponent,
-	AboutContactComponent,
-	CodeComponent,
-	FilesComponent,
-	CodeOverviewComponent,
-	ContactComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-	RouterModule.forRoot(routes),
-	GitGraphModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		ProfileCoverComponent,
+		CoverPhotoComponent,
+		ProfilePictureComponent,
+		ProfileNavComponent,
+		ProfileComponent,
+		SidebarComponent,
+		TimelineComponent,
+		Error404Component,
+		AboutComponent,
+		AboutOverviewComponent,
+		AboutWorkComponent,
+		AboutEducationComponent,
+		AboutProjectsComponent,
+		AboutPlacesComponent,
+		AboutContactComponent,
+		CodeComponent,
+		FilesComponent,
+		CodeOverviewComponent,
+		ContactComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		RouterModule.forRoot(routes),
+		GitGraphModule,
+		PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

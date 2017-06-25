@@ -2,13 +2,13 @@
 	<div class="contact-title cream-bg">
 		<i class="fa fa-comments"></i> Messages
 	</div>
-	<div class="messages cream-bg">
+	<perfect-scrollbar class="container" [config]="config" class="messages cream-bg" #messageContainer>
 		<div class="message" *ngFor="let message of messages" [ngClass]="message.sender==OWNER?'owner':'user'">
 			<div class="bubble">
 				{{message.message}}
 			</div>
 		</div>
-	</div>
+	</perfect-scrollbar>
 	<div class="input-wrapper">
 		<div class="input-area">
 			<textarea placeholder="Let's talk..."></textarea>

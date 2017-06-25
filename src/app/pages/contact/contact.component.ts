@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 const OWNER: string = "John Fedoruk";
 const USER: string = "You";
@@ -16,6 +16,9 @@ interface Message {
 })
 export class ContactComponent implements OnInit {
 
+	@ViewChild('messageContainer')
+	private messageContainer: any;
+
 	readonly OWNER: string = OWNER;
 	readonly USER: string = USER;
 
@@ -25,8 +28,11 @@ export class ContactComponent implements OnInit {
 
 	ngOnInit() {
 		for (let i = 0; i < 20; i++) {
-			this.messages.push(this.randomMessage());
+			this.onNewMessage(this.randomMessage());
 		}
+		setInterval(()=>{
+			this.onNewMessage(this.randomMessage());
+		},Math.floor(Math.random()*10000));
 	}
 
 	private randomMessage():Message {
@@ -46,8 +52,22 @@ export class ContactComponent implements OnInit {
 		return txt;
 	}
 
+	private onNewMessage(message:Message):void {
+		this.messages.push(message);
+		this.scrollToBottom();
+	}
+
 	private randomSender(): string {
 		return Math.random() > 0.5 ? this.OWNER : USER;
 	}
+
+	private scrollToBottom(): void {
+        try {
+			setTimeout(()=>{
+				console.log(this.messageContainer);
+	            this.messageContainer.elementRef.nativeElement.scrollTop = this.messageContainer.elementRef.nativeElement.scrollHeight;
+			},100);
+        } catch(err) { }                 
+    }
 
 }
