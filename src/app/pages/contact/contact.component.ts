@@ -22,7 +22,8 @@ export class ContactComponent implements OnInit {
 	readonly OWNER: string = OWNER;
 	readonly USER: string = USER;
 
-	messages: Message[] = [];
+	public input:string;
+	public messages: Message[] = [];
 
 	constructor() { }
 
@@ -30,16 +31,31 @@ export class ContactComponent implements OnInit {
 		for (let i = 0; i < 20; i++) {
 			this.onNewMessage(this.randomMessage());
 		}
-		setInterval(()=>{
-			this.onNewMessage(this.randomMessage());
-		},Math.floor(Math.random()*10000));
 	}
 
-	private randomMessage():Message {
+	public onSendMessage(e:Event):boolean {
+		if(e)
+			e.preventDefault();
+		if(!this.input||this.input.length<1)
+			return false;
+		this.onNewMessage({
+			date: new Date(),
+			message:this.input,
+			sender:USER
+		});
+		this.input = "";
+		// send a dummy response by OWNER
+		setTimeout(()=>{
+			this.onNewMessage(this.randomMessage(OWNER));
+		},Math.floor(Math.random()*5000));
+		return false;
+	}
+
+	private randomMessage(sender:string=this.randomSender()):Message {
 		return {
 			date: new Date(),
 			message:this.randomText(),
-			sender:this.randomSender()
+			sender:sender
 		}
 	}
 

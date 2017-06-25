@@ -23,12 +23,12 @@
 	</perfect-scrollbar>
 	<div class="input-wrapper">
 		<div class="input-area">
-			<textarea placeholder="Let's talk..."></textarea>
+			<textarea placeholder="Let's talk..." [(ngModel)]="input" (keydown.enter)="onSendMessage()"></textarea>
 			<span class="input-buttons">
 				<div class="input-button">
 					<i class="fa fa-paperclip"></i>
 				</div>
-				<div class="input-button">
+				<div class="input-button" (click)="onSendMessage()">
 					<i class="fa fa-send"></i>
 				</div>
 			</span>
