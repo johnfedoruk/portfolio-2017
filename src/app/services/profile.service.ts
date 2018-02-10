@@ -91,6 +91,18 @@ export class ProfileService {
         )
     }
 
+    public getPhones(): Observable<string[]> {
+        return new Observable<string[]>(
+            observer => {
+                this.getContact().subscribe(
+                    contact => {
+                        observer.next(contact.phones);
+                    }
+                )
+            }
+        )
+    }
+
     public getPhotos(): Observable<any> {
         return new Observable<any>(
             observer => {
