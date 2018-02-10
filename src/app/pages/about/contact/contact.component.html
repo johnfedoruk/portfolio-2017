@@ -1,63 +1,62 @@
 <div class="contact-wrapper">
-	<div class="title">
-		Contact Information
-	</div>
-	<table>
-		<tr>
-			<td>
-				Mobile Phones
-			</td>
-			<td>
-				<div class="contact-entry">077-293-44581</div>
-				<div class="contact-entry">(204)250-5147</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Email
-			</td>
-			<td>
-				<div class="contact-entry"><a href="">johnny@johnfedoruk.ca</a></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Address
-			</td>
-			<td>
-				<div class="contact-entry">London, UK</div>
-			</td>
-		</tr>
-	</table>
+    <div class="title">
+        Contact Information
+    </div>
+    <table>
+        <tr>
+            <td>
+                Mobile Phones
+            </td>
+            <td>
+                <div class="contact-entry" *ngFor="let phone of phones">{{phone}}</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <div class="contact-entry" *ngFor="let email of emails"><a href="">{{email}}</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address
+            </td>
+            <td>
+                <div class="contact-entry">London, UK</div>
+            </td>
+        </tr>
+    </table>
 </div>
 <div class="contact-wrapper">
-	<div class="title">
-		Websites and Social Links
-	</div>
-	<table>
-		<tr>
-			<td>
-				Portfolio
-			</td>
-			<td>
-				<div class="contact-entry"><a href="#">johnfedoruk.ca</a></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Blog
-			</td>
-			<td>
-				<div class="contact-entry"><a href="#">blog.johnfedoruk.ca</a></div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Twitter
-			</td>
-			<td>
-				<div class="contact-entry"><a href="#">twitter.com/WPG_IT</a></div>
-			</td>
-		</tr>
-	</table>
+    <div class="title">
+        Websites and Social Links
+    </div>
+    <table>
+        <tr>
+            <td>
+                Portfolio
+            </td>
+            <td>
+                <div class="contact-entry"><a href="#">johnfedoruk.ca</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Blog
+            </td>
+            <td>
+                <div class="contact-entry"><a href="#">blog.johnfedoruk.ca</a></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Twitter
+            </td>
+            <td>
+                <div class="contact-entry"><a href="#">twitter.com/WPG_IT</a></div>
+            </td>
+        </tr>
+    </table>
 </div>
