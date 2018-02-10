@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class SidebarComponent implements OnInit, OnDestroy {
 
     public intro: string;
+    public github: string;
     public array: string[] = [];
 
     private subscriptions: Subscription[] = [];
@@ -21,6 +22,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
         this.subscriptions.push(
             this.profile.getIntro().subscribe(
                 intro => this.intro = intro
+            )
+        );
+        this.subscriptions.push(
+            this.profile.getGithub().subscribe(
+                github => this.github = github
             )
         );
         for (let i = 0; i < 15; i++)
