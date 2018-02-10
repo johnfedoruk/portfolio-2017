@@ -29,6 +29,7 @@ import { FilesComponent } from './pages/code/files/files.component';
 import { OverviewComponent as CodeOverviewComponent } from './pages/code/overview/overview.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ChatBoxComponent } from './partials/chat-box/chat-box.component';
+import { ProfileService } from 'app/services/profile.service';
 
 const routes: Routes = [
 	{
@@ -131,7 +132,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		GitGraphModule,
 		PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
 	],
-	providers: [],
+	providers: [
+        ProfileService
+    ],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
