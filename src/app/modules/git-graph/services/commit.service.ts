@@ -10,7 +10,7 @@ export class CommitService {
     public commitCount(username: string, proxy?: string, proxy_options?: string): Observable<string> {
         return new Observable<string>(
             observer => {
-                this.http.get(`${proxy?proxy:"https://"}github.com/${username}${proxy_options?proxy_options:""}`).subscribe(
+                this.http.get(`${proxy ? proxy : "https://"}github.com/${username}${proxy_options ? proxy_options : ""}`).subscribe(
                     data => {
                         const body: string = (<any>data)._body;
                         const regex = /mb-2\">([\s\S]*?)contributions/im;
@@ -21,4 +21,19 @@ export class CommitService {
             }
         )
     }
+
+    public commitGraph(username: string, proxy?: string, proxy_options?: string): Observable<string> {
+        return new Observable<string>(
+            observer => {
+                this.http.get(`${proxy ? proxy : "https://"}https://github.com/users/${username}/contributions${proxy_options ? proxy_options : ""}`).subscribe(
+                    data => {
+                        const body: string = (<any>data)._body;
+                        const graph: string = body;
+                        observer.next(graph);
+                    }
+                );
+            }
+        );
+    }
+
 }
