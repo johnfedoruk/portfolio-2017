@@ -53,12 +53,12 @@
 					(204)250-5147
 				</td>
 			</tr>
-			<tr>
+			<tr *ngFor="let email of emails">
 				<td>
 					<i class="fa fa-envelope-o"></i>
 				</td>
 				<td>
-					<a href="#">johnny@johnfedoruk.ca</a>
+					<a [href]="'mailto:'+email+'?Subject=Profile%20Contact'" target="_top">{{email}}</a>
 				</td>
 			</tr>
 		</table>
