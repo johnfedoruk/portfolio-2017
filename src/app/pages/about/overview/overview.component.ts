@@ -13,14 +13,21 @@ export class OverviewComponent implements OnInit, OnDestroy {
     public commit_count: string;
     public emails: string[];
     public phones: string[];
-    public github: string = "johnfedoruk";
+    public github: string;
     private subscriptions: Subscription[] = [];
     constructor(private commits: CommitService, private profile: ProfileService) { }
 
     ngOnInit() {
         this.subscriptions.push(
-            this.commits.commitCount(this.github, "http://localhost:9090/").subscribe(
-                commits => this.commit_count = commits
+            this.profile.getGithub().subscribe(
+                github => {
+                    this.github = github;
+                    this.subscriptions.push(
+                        this.commits.commitCount(this.github, "http://localhost:9090/").subscribe(
+                            commits => this.commit_count = commits
+                        )
+                    );
+                }
             )
         );
         this.subscriptions.push(
