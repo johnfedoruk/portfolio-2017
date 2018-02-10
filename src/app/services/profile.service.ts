@@ -56,7 +56,7 @@ export class ProfileService {
     }
 
     public getIntro(): Observable<string> {
-        return new Observable<any>(
+        return new Observable<string>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -73,6 +73,18 @@ export class ProfileService {
                 this.getInfo().subscribe(
                     info => {
                         observer.next(info.contact);
+                    }
+                )
+            }
+        )
+    }
+
+    public getEmails(): Observable<string[]> {
+        return new Observable<string[]>(
+            observer => {
+                this.getContact().subscribe(
+                    contact => {
+                        observer.next(contact.emails);
                     }
                 )
             }
