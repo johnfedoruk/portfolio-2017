@@ -67,6 +67,18 @@ export class ProfileService {
         )
     }
 
+    public getContact(): Observable<any> {
+        return new Observable<any>(
+            observer => {
+                this.getInfo().subscribe(
+                    info => {
+                        observer.next(info.contact);
+                    }
+                )
+            }
+        )
+    }
+
     public getPhotos(): Observable<any> {
         return new Observable<any>(
             observer => {
