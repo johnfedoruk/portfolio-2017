@@ -55,6 +55,18 @@ export class ProfileService {
         )
     }
 
+    public getGithub(): Observable<string> {
+        return new Observable<string>(
+            observer => {
+                this.getInfo().subscribe(
+                    info => {
+                        observer.next(info.github);
+                    }
+                )
+            }
+        )
+    }
+
     public getIntro(): Observable<string> {
         return new Observable<string>(
             observer => {
