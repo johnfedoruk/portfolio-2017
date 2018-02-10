@@ -78,4 +78,17 @@ export class ProfileService {
             }
         );
     }
+
+    public getCoverPhotos(): Observable<any[]> {
+        return new Observable<any>(
+            observer => {
+                this.getPhotos().subscribe(
+                    photos => {
+                        observer.next(photos["cover-photos"]);
+                    }
+                )
+            }
+        );
+    }
+
 }
