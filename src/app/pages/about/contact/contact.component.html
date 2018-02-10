@@ -16,7 +16,7 @@
                 Email
             </td>
             <td>
-                <div class="contact-entry" *ngFor="let email of emails"><a href="">{{email}}</a></div>
+                <div class="contact-entry" *ngFor="let email of emails"><a [href]="'mailto:'+email+'?Subject=Profile%20Contact'" target="_top">{{email}}</a></div>
             </td>
         </tr>
         <tr>
