@@ -12,6 +12,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
     public commit_count: string;
     public emails: string[];
+    public phones: string[];
     public github: string = "johnfedoruk";
     private subscriptions: Subscription[] = [];
     constructor(private commits: CommitService, private profile: ProfileService) { }
@@ -25,6 +26,11 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.subscriptions.push(
             this.profile.getEmails().subscribe(
                 emails => this.emails = emails
+            )
+        );
+        this.subscriptions.push(
+            this.profile.getPhones().subscribe(
+                phones => this.phones = phones
             )
         );
     }
