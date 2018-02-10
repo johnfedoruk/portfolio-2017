@@ -34,28 +34,12 @@
         Websites and Social Links
     </div>
     <table>
-        <tr>
+        <tr *ngFor="let link of links">
             <td>
-                Portfolio
+                {{link.name}}
             </td>
             <td>
-                <div class="contact-entry"><a href="#">johnfedoruk.ca</a></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Blog
-            </td>
-            <td>
-                <div class="contact-entry"><a href="#">blog.johnfedoruk.ca</a></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Twitter
-            </td>
-            <td>
-                <div class="contact-entry"><a href="#">twitter.com/WPG_IT</a></div>
+                <div class="contact-entry"><a [href]="link.url" target="_blank">{{link.url}}</a></div>
             </td>
         </tr>
     </table>

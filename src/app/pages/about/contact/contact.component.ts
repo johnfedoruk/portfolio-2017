@@ -11,6 +11,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
     public phones: string[];
     public emails: string[];
+    public links: any[];
     private subscriptions: Subscription[] = [];
     constructor(private profile: ProfileService) { }
 
@@ -25,6 +26,11 @@ export class ContactComponent implements OnInit, OnDestroy {
                 emails => this.emails = emails
             )
         );
+        this.subscriptions.push(
+            this.profile.getLinks().subscribe(
+                links => this.links = links
+            )
+        )
     }
 
     ngOnDestroy() {
