@@ -21,7 +21,7 @@ export class GitGraphComponent implements OnInit {
     @Input("proxy-options")
     public proxy_options: string = "";
 
-    constructor(private http: Http, private commits: CommitService) { }
+    constructor(private commits: CommitService) { }
 
     ngOnInit() {
 
