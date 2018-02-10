@@ -1,52 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import "./assets/github_contributions.js";
+import { Http } from '@angular/http';
 
 declare const $: any;
 
 @Component({
-	selector: 'git-graph',
-	templateUrl: './git-graph.component.html',
-	styleUrls: [
-		'./git-graph.component.css'
-	]
+    selector: 'git-graph',
+    templateUrl: './git-graph.component.html',
+    styleUrls: [
+        './git-graph.component.css'
+    ]
 })
 export class GitGraphComponent implements OnInit {
+    public graph: string;
+    public contributions: string;
+    @Input("proxy")
+    public proxy: string = "https://cors.io/?";
+    @Input("proxy-options")
+    public proxy_options: string = "";
+    @Input("username")
+    private username: string;
 
-	contributions:number;
+    constructor(private http: Http) { }
 
-	constructor() { }
-
-	ngOnInit() {
-		$('#git_graph').github_graph({
-			//Default is empty list
-			data: this.getRandomTimeStamps(500,1000),
-			// single text and plural text
-			texts: ['git contribution', 'git contributions']
-		});
-	}
-
-	getRandomTimeStamps(min: number, max: number) {
-		let return_list = [];
-
-		let entries: number = this.randomInt(min, max);
-		this.contributions = entries;
-		for (let i: number = 0; i < entries; i++) {
-			let day: Date = new Date();
-
-			//Genrate random
-			let previous_date: number = this.randomInt(0, 365);
-			day.setDate(day.getDate() - previous_date);
-
-			return_list.push(day.getTime());
-		}
-
-		return return_list;
-
-	}
-
-	randomInt(min: number, max: number): number {
-		return Math.floor(Math.random() * (max - min + 1) + min);
-	}
+    ngOnInit() {
+        this.http.get(`${this.proxy}https://github.com/users/${this.username}/contributions${this.proxy_options}`).subscribe(
+            data => {
+                const body: string = (<any>data)._body;
+                this.graph = body;
+            }
+        );
+        this.http.get(`${this.proxy}https://github.com/${this.username}${this.proxy_options}`).subscribe(
+            data => {
+                const body: string = (<any>data)._body;
+                const regex = /mb-2\">([\s\S]*?)contributions/im;
+                const contributions = body.match(regex)[1].trim();
+                this.contributions = contributions;
+            }
+        )
+    }
 
 }
 

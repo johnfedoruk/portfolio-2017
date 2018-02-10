@@ -1,7 +1,8 @@
 <div class="contribution-info">
 	{{contributions}} Contributions
 </div>
-<div class="git-wrapper">
-	<div id="git_graph"></div>
+<div class="git-wrapper" *ngIf="graph!==undefined" [innerHTML]="graph | html">
 </div>
+<br *ngIf="graph===undefined">
+<br *ngIf="graph===undefined">
 <a href="#">github.com/johnfedoruk</a>
