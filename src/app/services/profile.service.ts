@@ -67,4 +67,15 @@ export class ProfileService {
         );
     }
 
+    public getProfilePhotos(): Observable<any[]> {
+        return new Observable<any>(
+            observer => {
+                this.getPhotos().subscribe(
+                    photos => {
+                        observer.next(photos["profile-photos"]);
+                    }
+                )
+            }
+        );
+    }
 }
