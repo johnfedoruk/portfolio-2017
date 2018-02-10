@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import "./assets/github_contributions.js";
 import { Http } from '@angular/http';
+import { CommitService } from './services/commit.service';
 
 declare const $: any;
 
@@ -12,32 +13,31 @@ declare const $: any;
     ]
 })
 export class GitGraphComponent implements OnInit {
+    public _username: string;
     public graph: string;
     public contributions: string;
     @Input("proxy")
-    public proxy: string = "https://cors.io/?";
+    public proxy: string = "http://localhost:9090/";
     @Input("proxy-options")
     public proxy_options: string = "";
-    @Input("username")
-    private username: string;
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private commits: CommitService) { }
 
     ngOnInit() {
-        this.http.get(`${this.proxy}https://github.com/users/${this.username}/contributions${this.proxy_options}`).subscribe(
-            data => {
-                const body: string = (<any>data)._body;
-                this.graph = body;
-            }
-        );
-        this.http.get(`${this.proxy}https://github.com/${this.username}${this.proxy_options}`).subscribe(
-            data => {
-                const body: string = (<any>data)._body;
-                const regex = /mb-2\">([\s\S]*?)contributions/im;
-                const contributions = body.match(regex)[1].trim();
-                this.contributions = contributions;
-            }
-        )
+
+    }
+
+    @Input("username")
+    public set username(username: string) {
+        this._username = username;
+        if(username!==undefined && username !== null) {
+            this.commits.commitCount(username,this.proxy,this.proxy_options).subscribe(
+                commits => this.contributions = commits
+            );
+            this.commits.commitGraph(username,this.proxy,this.proxy_options).subscribe(
+                graph => this.graph = graph
+            )
+        }
     }
 
 }
