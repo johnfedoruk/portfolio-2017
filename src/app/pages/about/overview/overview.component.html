@@ -19,10 +19,10 @@
 			</tr>
 			<tr>
 				<td>
-					<div class="logo" style="background-image:url(https://avatars3.githubusercontent.com/u/16842229?v=3&s=460)"></div>
+					<div class="logo" [ngStyle]="{backgroundImage:'url(https://avatars.githubusercontent.com/'+github+')'}"></div>
 				</td>
 				<td>
-					Made 1,724 coontributions on <a href="#">Github</a> in the last year
+					Made {{ commit_count }} coontributions on <a [href]="'https://github.com/'+github" target="_blank">Github</a> in the last year
 				</td>
 			</tr>
 			<tr>
