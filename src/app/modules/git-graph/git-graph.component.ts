@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import "./assets/github_contributions.js";
 import { Http } from '@angular/http';
 import { CommitService } from './services/commit.service';
+import { Subscription } from 'rxjs/Subscription';
 
 declare const $: any;
 
@@ -12,7 +13,7 @@ declare const $: any;
         './git-graph.component.css'
     ]
 })
-export class GitGraphComponent implements OnInit {
+export class GitGraphComponent implements OnInit, OnDestroy {
     public _username: string;
     public graph: string;
     public contributions: string;
@@ -21,22 +22,34 @@ export class GitGraphComponent implements OnInit {
     @Input("proxy-options")
     public proxy_options: string = "";
 
+    private subscriptions: Subscription[] = [];
+
     constructor(private commits: CommitService) { }
 
     ngOnInit() {
 
     }
 
+    ngOnDestroy() {
+        this.subscriptions.forEach(
+            subscription => subscription.unsubscribe()
+        )
+    }
+
     @Input("username")
     public set username(username: string) {
         this._username = username;
         if(username!==undefined && username !== null) {
-            this.commits.commitCount(username,this.proxy,this.proxy_options).subscribe(
-                commits => this.contributions = commits
+            this.subscriptions.push(
+                this.commits.commitCount(username,this.proxy,this.proxy_options).subscribe(
+                    commits => this.contributions = commits
+                )
             );
-            this.commits.commitGraph(username,this.proxy,this.proxy_options).subscribe(
-                graph => this.graph = graph
-            )
+            this.subscriptions.push(
+                this.commits.commitGraph(username,this.proxy,this.proxy_options).subscribe(
+                    graph => this.graph = graph
+                )
+            );
         }
     }
 
