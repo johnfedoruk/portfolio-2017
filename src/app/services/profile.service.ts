@@ -55,4 +55,16 @@ export class ProfileService {
         )
     }
 
+    public getPhotos(): Observable<any> {
+        return new Observable<any>(
+            observer => {
+                this.getProfile().subscribe(
+                    profile => {
+                        observer.next(profile.photos);
+                    }
+                )
+            }
+        );
+    }
+
 }
