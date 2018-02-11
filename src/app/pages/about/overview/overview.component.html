@@ -1,58 +1,58 @@
 <div class="overview-wrapper">
-	<div class="left">
-		<table>
-			<tr>
-				<td>
-					<div class="logo" style="background-image:url(http://bit.ly/2s81PwI)"></div>
-				</td>
-				<td>
-					Software Engineer at <a href="#">Wiser</a> and Founder at <a href="#">WPG I.T.</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
-				</td>
-				<td>
-					Studied Computer Science, Microbiology, and Chemistry at <a href="#">University of Manitoba</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="logo" [ngStyle]="{backgroundImage:'url(https://avatars.githubusercontent.com/'+github+')'}"></div>
-				</td>
-				<td>
-					Made {{ commit_count }} coontributions on <a [href]="'https://github.com/'+github" target="_blank">Github</a> in the last year
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="logo" style="background-image:url(http://bit.ly/2sDeFqg)"></div>
-				</td>
-				<td>
-					Lives in <a href="#">London, UK</a>, and from <a href="#">Winnipeg, Canada</a>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div class="right">
-		<table>
-			<tr *ngFor="let phone of phones">
-				<td>
-					<i class="fa fa-phone"></i>
-				</td>
-				<td>
+    <div class="left">
+        <table>
+            <tr>
+                <td>
+                    <div class="logo" style="background-image:url(http://bit.ly/2s81PwI)"></div>
+                </td>
+                <td>
+                    Software Engineer at <a href="#">Wiser</a> and Founder at <a href="#">WPG I.T.</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
+                </td>
+                <td>
+                    Studied Computer Science, Microbiology, and Chemistry at <a href="#">University of Manitoba</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="logo" [ngStyle]="{backgroundImage:'url(https://avatars.githubusercontent.com/'+github+')'}"></div>
+                </td>
+                <td>
+                    Made {{ commit_count }} coontributions on <a [href]="'https://github.com/'+github" target="_blank">Github</a>                    in the last year
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="logo" [ngStyle]="{backgroundImage:'url('+location.logo+')'}"></div>
+                </td>
+                <td>
+                    Lives in <a [href]="location.url" target="_blank">{{location.city}}, {{location.country}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right">
+        <table>
+            <tr *ngFor="let phone of phones">
+                <td>
+                    <i class="fa fa-phone"></i>
+                </td>
+                <td>
                     {{phone}}
-				</td>
-			</tr>
-			<tr *ngFor="let email of emails">
-				<td>
-					<i class="fa fa-envelope-o"></i>
-				</td>
-				<td>
-					<a [href]="'mailto:'+email+'?Subject=Profile%20Contact'" target="_top">{{email}}</a>
-				</td>
-			</tr>
-		</table>
-	</div>
+                </td>
+            </tr>
+            <tr *ngFor="let email of emails">
+                <td>
+                    <i class="fa fa-envelope-o"></i>
+                </td>
+                <td>
+                    <a [href]="'mailto:'+email+'?Subject=Profile%20Contact'" target="_top">{{email}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
