@@ -1,40 +1,13 @@
 <div class="work-wrapper">
-	<table>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(http://bit.ly/2s81PwI)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">Wiser</a></div>
-				Software Engineer ‧ October 2016 - present ‧ London, United Kingdom
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(https://wpgit.ca/images/logo/logo%2050.png)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">WPG I.T.</a></div>
-				Founder ‧ April 2016 - present ‧ Winnipeg, Canada
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">University of Manitoba</a></div>
-				Bioinformatics Consultant ‧ December 2014 - March 2015 ‧ Winnipeg, Canada
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(http://pandorainn.ca/images/logos/logo.jpg)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">Pandora Inn</a></div>
-				Bartender / Floor Manager ‧ January 2008 - September 2016 ‧ Winnipeg, Canada
-			</td>
-		</tr>
-	</table>
+    <table>
+        <tr *ngFor="let job of jobs">
+            <td>
+                <div class="logo" [ngStyle]="{backgroundImage:'url('+job.logo+')'}"></div>
+            </td>
+            <td>
+                <div class="title"><a [href]="job.url" target="_blank">{{job.company}}</a></div>
+                {{job.title}} ‧ {{job.start | date:"yyyy"}} - {{job.end?(job.end|date:"yyyy"):"present"}} ‧ {{job.city}}
+            </td>
+        </tr>
+    </table>
 </div>
