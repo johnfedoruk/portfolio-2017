@@ -6,7 +6,9 @@
                     <div class="logo" style="background-image:url(http://bit.ly/2s81PwI)"></div>
                 </td>
                 <td>
-                    Software Engineer at <a href="#">Wiser</a> and Founder at <a href="#">WPG I.T.</a>
+                    <span *ngFor="let job of jobs;let i=index">
+                        {{job.title}} at <a [href]="job.url" target="_blank">{{job.company}}</a><span *ngIf="jobs.length>2 && i!=jobs.length-1">, </span><span *ngIf="jobs.length>1 && i==jobs.length-2">and</span>
+                    </span>
                 </td>
             </tr>
             <tr>

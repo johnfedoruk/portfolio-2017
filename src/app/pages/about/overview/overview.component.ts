@@ -14,7 +14,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
     public emails: string[];
     public phones: string[];
     public github: string;
-    public location;
+    public location: any;
+    public jobs: any[];
     private subscriptions: Subscription[] = [];
     constructor(private commits: CommitService, private profile: ProfileService) { }
 
@@ -45,6 +46,13 @@ export class OverviewComponent implements OnInit, OnDestroy {
             this.profile.getLocations().subscribe(
                 locations => this.location = locations.find(
                     location => location.end === undefined
+                )
+            )
+        );
+        this.subscriptions.push(
+            this.profile.getWork().subscribe(
+                jobs => this.jobs = jobs.filter(
+                    job => job.end === undefined
                 )
             )
         );
