@@ -1,30 +1,12 @@
 <div class="education-wrapper">
 	<table>
-		<tr>
+		<tr *ngFor="let education of educations">
 			<td>
-				<div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
+				<div class="logo" [ngStyle]="{backgroundImage:'url('+education.logo+')'}"></div>
 			</td>
 			<td>
-				<div class="title"><a href="#">University of Manitoba</a></div>
-				Computer Science Major ‧ 2010 - 2016 ‧ Winnipeg, Manitoba
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">University of Manitoba</a></div>
-				Microbiology Elective Focus ‧ 2010 - 2016 ‧ Winnipeg, Manitoba
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
-			</td>
-			<td>
-				<div class="title"><a href="#">University of Manitoba</a></div>
-				Chemistry Elective Focus ‧ 2010 - 2016 ‧ Winnipeg, Manitoba
+				<div class="title"><a [href]="education.url" target="_blank">{{education.institution}}</a></div>
+				{{education.focus}} ‧ {{education.start | date:"yyyy"}} - {{education.end?(education.end|date:"yyyy"):"present"}} ‧ {{education.city}}
 			</td>
 		</tr>
 	</table>
