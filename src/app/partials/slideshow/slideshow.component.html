@@ -1,8 +1,10 @@
-<div class="wrapper">
-    <div class="image" [ngStyle]="{backgroundImage:'url('+image+')'}">
+<div class="overlay" (click)="closeImages()" [ngClass]="show()?'show':'hide'">
+    <div class="wrapper" *ngIf="show()" (click)="doNothing($event)">
+        <div class="image" [ngStyle]="{backgroundImage:'url('+image+')'}">
 
-    </div>
-    <div class="info">
+        </div>
+        <div class="info">
 
+        </div>
     </div>
 </div>

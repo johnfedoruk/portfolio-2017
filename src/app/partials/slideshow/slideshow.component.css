@@ -1,10 +1,18 @@
-:host {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    transition: 666ms ease all;
+}
+.overlay.show {
+    pointer-events: all;
+    background: rgba(0,0,0,0.9);
+}
+.overlay.hide {
+    pointer-events: none;
+    background: rgba(0,0,0,0);
 }
 
 .wrapper {
