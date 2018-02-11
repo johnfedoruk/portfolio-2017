@@ -31,6 +31,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ChatBoxComponent } from './partials/chat-box/chat-box.component';
 import { ProfileService } from 'app/services/profile.service';
 import { SlideshowComponent } from './partials/slideshow/slideshow.component';
+import { SlideshowService } from "./services/slideshow.service";
 
 const routes: Routes = [
 	{
@@ -135,7 +136,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
 	],
 	providers: [
-        ProfileService
+        ProfileService,
+        SlideshowService
     ],
 	bootstrap: [AppComponent]
 })
