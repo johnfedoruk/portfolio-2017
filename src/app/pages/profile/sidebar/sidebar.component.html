@@ -42,28 +42,12 @@
 				Former bartender at <a href="#">Pandora Inn</a>
 			</td>
 		</tr>
-		<tr>
+		<tr *ngFor="let ed of education">
 			<td>
 				<i class="fa fa-university"></i>
 			</td>
 			<td>
-				Graduated computer science at <a href="#">University of Manitoba</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i class="fa fa-university"></i>
-			</td>
-			<td>
-				Studied microbiology at <a href="#">University of Manitoba</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i class="fa fa-university"></i>
-			</td>
-			<td>
-				Studied chemistry at <a href="#">University of Manitoba</a>
+				{{ed.end?'Graduated':'Studying'}} {{ed.focus}} at <a [href]="ed.url" target="_blank">{{ed.institution}}</a>
 			</td>
 		</tr>
 

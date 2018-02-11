@@ -12,6 +12,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
     public intro: string;
     public github: string;
+    public jobs: any[];
+    public education: any[];
     public array: string[] = [];
 
     private subscriptions: Subscription[] = [];
@@ -27,6 +29,18 @@ export class SidebarComponent implements OnInit, OnDestroy {
         this.subscriptions.push(
             this.profile.getGithub().subscribe(
                 github => this.github = github
+            )
+        );
+        this.subscriptions.push(
+            this.profile.getWork().subscribe(
+                jobs => this.jobs = jobs.filter(
+                    job => job.end === undefined
+                )
+            )
+        );
+        this.subscriptions.push(
+            this.profile.getEducation().subscribe(
+                education => this.education = education.reverse()
             )
         );
         for (let i = 0; i < 15; i++)
