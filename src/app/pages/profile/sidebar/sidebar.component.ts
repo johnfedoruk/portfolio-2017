@@ -43,6 +43,11 @@ export class SidebarComponent implements OnInit, OnDestroy {
                 education => this.education = education.reverse()
             )
         );
+        this.subscriptions.push(
+            this.profile.getWork().subscribe(
+                jobs => this.jobs = jobs.reverse()
+            )
+        );
         for (let i = 0; i < 15; i++)
             this.array.push(i % 2 == 0 ? "Hello World Hello World Hello World Hello World" : "World");
     }

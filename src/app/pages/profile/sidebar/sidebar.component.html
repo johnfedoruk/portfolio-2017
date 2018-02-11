@@ -10,36 +10,12 @@
 	</div>
 	<hr>
 	<table class="achievements">
-		<tr>
+		<tr *ngFor="let job of jobs">
 			<td>
 				<i class="fa fa-suitcase"></i>
 			</td>
 			<td>
-				Software Engineer at <a href="#">Wiser</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i class="fa fa-suitcase"></i>
-			</td>
-			<td>
-				Founder at <a href="#">WPG I.T.</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i class="fa fa-suitcase"></i>
-			</td>
-			<td>
-				Former data science consultant at <a href="#">University of Manitoba</a>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i class="fa fa-suitcase"></i>
-			</td>
-			<td>
-				Former bartender at <a href="#">Pandora Inn</a>
+				<span *ngIf="job.end!==undefined">Former </span>{{job.title}} at <a [href]="job.url" target="_blank">{{job.company}}</a>
 			</td>
 		</tr>
 		<tr *ngFor="let ed of education">
