@@ -139,6 +139,18 @@ export class ProfileService {
         )
     }
 
+    public getWork(): Observable<any[]> {
+        return new Observable<any[]>(
+            observer => {
+                this.getInfo().subscribe(
+                    info => {
+                        observer.next(info.work);
+                    }
+                )
+            }
+        )
+    }
+
     public getPhotos(): Observable<any> {
         return new Observable<any>(
             observer => {
