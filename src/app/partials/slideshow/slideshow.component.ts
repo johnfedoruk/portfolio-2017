@@ -7,8 +7,9 @@ import { SlideshowService } from 'app/services/slideshow.service';
     styleUrls: ['./slideshow.component.css']
 })
 export class SlideshowComponent implements OnInit {
+
+    public index: number;
     public images: any[];
-    public image: string = "http://lifekefunde.com/wp-content/uploads/2018/02/life.jpg";
     constructor(private slideshow: SlideshowService) { }
 
     ngOnInit() {
@@ -16,8 +17,7 @@ export class SlideshowComponent implements OnInit {
             images =>
                 setTimeout(() => {
                     this.images = images;
-                    if(this.show())
-                        this.image = this.images[0];
+                    this.index = 0;
                 }, 1)
         );
     }
@@ -34,4 +34,15 @@ export class SlideshowComponent implements OnInit {
         $event.preventDefault();
         $event.stopPropagation();
     }
+
+    public prev():void {
+        if(this.index!==0)
+            this.index--;
+    }
+
+    public next(): void {
+        if(this.index!==this.images.length-1)
+            this.index++;
+    }
+
 }

@@ -17,7 +17,6 @@
 
 .wrapper {
     width: 90vw;
-    background: transparent;
     height: calc( 10vw );
     height: 45vw;
     max-height: 90vh;
@@ -28,11 +27,15 @@
     max-width: calc( 90vh * 2);
     min-width: 900px;
     min-height: 450px;
+    background-color: black;
+    background-image: url(https://www.testarchitect.com/media/mb2testimonials/images/loading.gif);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 33%;
 }
 
 .image {
     display: inline-block;
-    background-color: black;
     height: 100%;
     width: 70%;
     background-repeat: no-repeat;

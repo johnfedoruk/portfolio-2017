@@ -1,11 +1,11 @@
 <div class="overlay" (click)="closeImages()" [ngClass]="show()?'show':'hide'">
     <div class="wrapper" *ngIf="show()" (click)="doNothing($event)">
-        <div class="image" [ngStyle]="{backgroundImage:'url('+image+')'}">
+        <div class="image" [ngStyle]="{backgroundImage:'url('+images[index]+')'}">
             <div class="arrow left">
-                <i class="fa fa-chevron-left"></i>
+                <i class="fa fa-chevron-left" [ngClass]="index==0?'disabled':''" (click)="prev()"></i>
             </div>
             <div class="arrow right">
-                <i class="fa fa-chevron-right"></i>
+                <i class="fa fa-chevron-right" [ngClass]="index==(images.length-1)?'disabled':''" (click)="next()"></i>
             </div>
         </div>
         <div class="info">
