@@ -3,7 +3,7 @@
         <table>
             <tr>
                 <td>
-                    <div class="logo" style="background-image:url(http://bit.ly/2s81PwI)"></div>
+                        <div class="logo" [ngStyle]="{backgroundImage:'url('+jobs[0].logo+')'}"></div>
                 </td>
                 <td>
                     <span *ngFor="let job of jobs;let i=index">
@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td>
-                    <div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
+                    <div class="logo" [ngStyle]="{backgroundImage:'url('+education[0].logo+')'}"></div>
                 </td>
                 <td>
                     <span *ngFor="let ed of education;let i=index">
