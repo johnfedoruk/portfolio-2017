@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { CommitService } from 'app/modules/git-graph/services/commit.service';
 import { ProfileService } from 'app/services/profile.service';
@@ -8,7 +8,7 @@ import { ProfileService } from 'app/services/profile.service';
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.css']
 })
-export class PlacesComponent implements OnInit {
+export class PlacesComponent implements OnInit, OnDestroy {
 
     public locations: any[];
     private subscriptions: Subscription[] = [];
