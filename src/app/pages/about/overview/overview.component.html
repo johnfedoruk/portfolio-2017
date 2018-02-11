@@ -16,7 +16,9 @@
                     <div class="logo" style="background-image:url(http://bit.ly/2sNYXYd)"></div>
                 </td>
                 <td>
-                    Studied Computer Science, Microbiology, and Chemistry at <a href="#">University of Manitoba</a>
+                    <span *ngFor="let ed of education;let i=index">
+                        {{ed.focus}} at <a [href]="ed.url" target="_blank">{{ed.institution}}</a><span *ngIf="ed.length>2 && i!=ed.length-1">, </span><span *ngIf="ed.length>1 && i==ed.length-2">and</span>
+                    </span>
                 </td>
             </tr>
             <tr>
