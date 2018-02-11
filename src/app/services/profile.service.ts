@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import * as _ from "lodash";
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class ProfileService {
@@ -11,7 +12,7 @@ export class ProfileService {
     private profile: any;
 
     constructor(private http: Http) {
-        this.http.get("https://tech-profile.firebaseio.com/profiles/johnfedoruk.json").subscribe(
+        this.http.get(`https://tech-profile.firebaseio.com/profiles/${environment.username}.json`).subscribe(
             (data) => {
                 this.profile = data.json();
                 this.loaded$.next(true);
