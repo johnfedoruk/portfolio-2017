@@ -98,6 +98,7 @@ export class ProfileService {
             observer => {
                 this.getInfo().subscribe(
                     info => {
+                        _.remove(info.links, _.isEmpty);
                         observer.next(info.links);
                     }
                 )
@@ -110,6 +111,7 @@ export class ProfileService {
             observer => {
                 this.getContact().subscribe(
                     contact => {
+                        _.remove(contact.emails, _.isEmpty);
                         observer.next(contact.emails);
                     }
                 )
@@ -122,6 +124,7 @@ export class ProfileService {
             observer => {
                 this.getContact().subscribe(
                     contact => {
+                        _.remove(contact.phones, _.isEmpty);
                         observer.next(contact.phones);
                     }
                 )
@@ -134,6 +137,7 @@ export class ProfileService {
             observer => {
                 this.getInfo().subscribe(
                     info => {
+                        _.remove(info.education, _.isEmpty);
                         observer.next(info.education);
                     }
                 )
@@ -146,6 +150,7 @@ export class ProfileService {
             observer => {
                 this.getInfo().subscribe(
                     info => {
+                        _.remove(info.work, _.isEmpty);
                         observer.next(info.work);
                     }
                 )
@@ -158,6 +163,7 @@ export class ProfileService {
             observer => {
                 this.getInfo().subscribe(
                     info => {
+                        _.remove(info.locations, _.isEmpty);
                         observer.next(info.locations);
                     }
                 )
@@ -170,6 +176,7 @@ export class ProfileService {
             observer => {
                 this.getInfo().subscribe(
                     info => {
+                        _.remove(info.projects, _.isEmpty);
                         observer.next(info.projects);
                     }
                 )
@@ -190,10 +197,11 @@ export class ProfileService {
     }
 
     public getProfilePhotos(): Observable<any[]> {
-        return new Observable<any>(
+        return new Observable<any[]>(
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
+                        _.remove(photos["profile-photos"], _.isEmpty);
                         observer.next(photos["profile-photos"]);
                     }
                 )
@@ -202,10 +210,11 @@ export class ProfileService {
     }
 
     public getCoverPhotos(): Observable<any[]> {
-        return new Observable<any>(
+        return new Observable<any[]>(
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
+                        _.remove(photos["cover-photos"], _.isEmpty);
                         observer.next(photos["cover-photos"]);
                     }
                 )
