@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'app/services/profile.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
+import { SlideshowService } from 'app/services/slideshow.service';
 
 @Component({
     selector: 'app-cover-photo',
@@ -15,7 +16,7 @@ export class CoverPhotoComponent implements OnInit, OnDestroy {
     public coverPhotos: string[];
     private subscriptions: Subscription[] = [];
 
-    constructor(private profile: ProfileService) { }
+    constructor(private profile: ProfileService, private slideshow:SlideshowService) { }
 
     ngOnInit() {
         this.subscriptions.push(
@@ -31,6 +32,10 @@ export class CoverPhotoComponent implements OnInit, OnDestroy {
                 }
             )
         );
+    }
+
+    public onOpenSlideshow(): void {
+        this.slideshow.addImages(this.coverPhotos);
     }
 
     ngOnDestroy() {
