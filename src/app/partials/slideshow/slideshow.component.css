@@ -38,6 +38,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    position: relative;
 }
 
 .info {
@@ -45,4 +46,38 @@
     background-color: white;
     height: 100%;
     width: 29%;
+}
+
+.arrow {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+.arrow.left {
+    left: 0;
+    text-align: right;
+}
+
+.arrow.right {
+    right: 0;
+    text-align: left;
+}
+
+.arrow > .fa {
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    color: rgba(255,255,255,0.2);
+    transition: 500ms ease color;
+}
+
+.arrow > .fa:hover {
+    color: rgba(255,255,255,0.5);
+}
+
+.arrow > .fa.disabled {
+    color: rgba(127,127,127,0.1) !important;
 }

@@ -1,7 +1,12 @@
 <div class="overlay" (click)="closeImages()" [ngClass]="show()?'show':'hide'">
     <div class="wrapper" *ngIf="show()" (click)="doNothing($event)">
         <div class="image" [ngStyle]="{backgroundImage:'url('+image+')'}">
-
+            <div class="arrow left">
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <div class="arrow right">
+                <i class="fa fa-chevron-right"></i>
+            </div>
         </div>
         <div class="info">
 
