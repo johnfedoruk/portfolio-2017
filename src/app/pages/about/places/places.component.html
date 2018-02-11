@@ -1,6 +1,15 @@
 <div class="places-wrapper">
-	<table>
-		<tr>
+    <table>
+        <tr *ngFor="let location of locations">
+            <td>
+                <div class="logo" [ngStyle]="{backgroundImage:'url('+location.logo+')'}"></div>
+            </td>
+            <td>
+                <div class="title"><a [href]="location.url" target="_blank">{{location.city}}, {{location.country}}</a></div>
+                {{location.start | date:"yyyy"}} - {{location.end?(location.end|date:"yyyy"):"present"}}
+            </td>
+        </tr>
+        <!-- <tr>
 			<td>
 				<div class="logo" style="background-image:url(http://bit.ly/2sDeFqg)"></div>
 			</td>
@@ -17,6 +26,6 @@
 				<div class="title"><a href="#">Winnipeg, CA</a></div>
 				January 1991 - September 2016
 			</td>
-		</tr>
-	</table>
+		</tr> -->
+    </table>
 </div>
