@@ -32,6 +32,7 @@ import { ChatBoxComponent } from './partials/chat-box/chat-box.component';
 import { ProfileService } from 'app/services/profile.service';
 import { SlideshowComponent } from './partials/slideshow/slideshow.component';
 import { SlideshowService } from "./services/slideshow.service";
+import { MessageComponent } from './pages/contact/message/message.component';
 
 const routes: Routes = [
 	{
@@ -89,7 +90,18 @@ const routes: Routes = [
 	},
 	{
 		path: "contact",
-		component: ContactComponent
+        component: ContactComponent,
+        children: [
+            {
+                path: "",
+                redirectTo: "message",
+				pathMatch: "full"
+            },
+            {
+                path: "message",
+                component: MessageComponent
+            }
+        ]
 	},
 	{
 		path: "**",
@@ -125,7 +137,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		CodeOverviewComponent,
 		ContactComponent,
 		ChatBoxComponent,
-		SlideshowComponent
+		SlideshowComponent,
+		MessageComponent
 	],
 	imports: [
 		BrowserModule,
