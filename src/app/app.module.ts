@@ -33,6 +33,7 @@ import { ProfileService } from 'app/services/profile.service';
 import { SlideshowComponent } from './partials/slideshow/slideshow.component';
 import { SlideshowService } from "./services/slideshow.service";
 import { MessageComponent } from './pages/contact/message/message.component';
+import { EmailComponent } from './pages/contact/email/email.component';
 
 const routes: Routes = [
 	{
@@ -100,6 +101,10 @@ const routes: Routes = [
             {
                 path: "message",
                 component: MessageComponent
+            },
+            {
+                path: "email",
+                component: EmailComponent
             }
         ]
 	},
@@ -138,7 +143,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		ContactComponent,
 		ChatBoxComponent,
 		SlideshowComponent,
-		MessageComponent
+		MessageComponent,
+		EmailComponent
 	],
 	imports: [
 		BrowserModule,

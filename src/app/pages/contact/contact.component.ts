@@ -10,6 +10,10 @@ export class ContactComponent implements OnInit {
         {
             title: "Message",
             link: "message"
+        },
+        {
+            title: "Email",
+            link: "email"
         }
     ];
     ngOnInit() { }
