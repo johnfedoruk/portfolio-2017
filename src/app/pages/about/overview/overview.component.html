@@ -1,7 +1,7 @@
 <div class="overview-wrapper">
     <div class="left">
         <table>
-            <tr>
+            <tr *ngIf="jobs!==undefined&&jobs!==null&&jobs.length!==undefined&&jobs.length>0">
                 <td>
                         <div class="logo" [ngStyle]="{backgroundImage:'url('+jobs[0].logo+')'}"></div>
                 </td>
@@ -11,7 +11,7 @@
                     </span>
                 </td>
             </tr>
-            <tr>
+            <tr *ngIf="education!==undefined&&education!==null&&education.length!==undefined&&education.length>0">
                 <td>
                     <div class="logo" [ngStyle]="{backgroundImage:'url('+education[0].logo+')'}"></div>
                 </td>
@@ -21,7 +21,7 @@
                     </span>
                 </td>
             </tr>
-            <tr>
+            <tr *ngIf="commit_count!==undefined&&commit_count!==null">
                 <td>
                     <div class="logo" [ngStyle]="{backgroundImage:'url(https://avatars.githubusercontent.com/'+github+')'}"></div>
                 </td>
@@ -29,7 +29,7 @@
                     Made {{ commit_count }} coontributions on <a [href]="'https://github.com/'+github" target="_blank">Github</a>                    in the last year
                 </td>
             </tr>
-            <tr>
+            <tr *ngIf="location!==undefined&&location!==null">
                 <td>
                     <div class="logo" [ngStyle]="{backgroundImage:'url('+location.logo+')'}"></div>
                 </td>
