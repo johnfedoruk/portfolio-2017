@@ -1,6 +1,13 @@
 <div class="contact-wrapper border">
-	<div class="contact-title cream-bg">
-		<i class="fa fa-comments"></i> Messages
+    <div class="contact-title cream-bg">
+        <i class="fa fa-comments"></i> Contact
     </div>
-    <router-outlet></router-outlet>
+    <div class="contact-menu">
+        <ul>
+            <li [routerLink]="route.link" routerLinkActive="active" *ngFor="let route of routes">{{route.title}}</li>
+        </ul>
+    </div>
+    <div class="contact-container">
+        <router-outlet></router-outlet>
+    </div>
 </div>

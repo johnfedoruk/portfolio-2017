@@ -23,3 +23,43 @@
 	margin-right: 13px;
 	color: #90949c;
 }
+.contact-menu, .contact-container {
+	vertical-align: top;
+}
+.contact-menu {
+	padding-top: 15px;
+	display: inline-block;
+	width: 200px;
+	border-right: 1px solid #d3d6da;
+}
+.contact-menu ul {
+	list-style: none;
+	padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.contact-menu li {
+	margin: 6px 0;
+    padding: 7px 23px 7px;
+	font-size: 15px;
+	cursor: pointer;
+	user-select: none;
+}
+.contact-menu li.active {
+	padding-left: 20px;
+	border-left: 3px solid #3b5997;
+	font-weight: bold;
+}
+.contact-menu li:focus {
+	outline: none;
+}
+.contact-menu li:hover {
+	color: #0f0f0f;
+}
+.contact-container {
+	margin-left: -5px;
+	display: inline-block;
+	width: calc( 100% - 210px );
+	min-height: 260px;
+	border-left: 1px solid #d3d6da;
+}

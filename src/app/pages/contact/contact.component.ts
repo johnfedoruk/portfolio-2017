@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+    routes: Array<{ title: string; link: string }> = [
+        {
+            title: "Message",
+            link: "message"
+        }
+    ];
     ngOnInit() { }
 
 }
