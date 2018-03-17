@@ -45,10 +45,11 @@
 }
 
 .info {
-    display: inline-block;
     background-color: white;
-    height: 100%;
-    width: 29%;
+    padding: 20px;
+    height: calc( 100% - 40px );
+    width: calc( 29% - 40px );
+    float: right;
 }
 
 .arrow {

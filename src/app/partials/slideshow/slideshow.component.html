@@ -1,6 +1,6 @@
 <div class="overlay" (click)="closeImages()" [ngClass]="show()?'show':'hide'">
     <div class="wrapper" *ngIf="show()" (click)="doNothing($event)">
-        <div class="image" [ngStyle]="{backgroundImage:'url('+images[index]+')'}">
+        <div class="image" [ngStyle]="{backgroundImage:'url('+images[index].url+')'}">
             <div class="arrow left">
                 <i class="fa fa-chevron-left" [ngClass]="index==0?'disabled':''" (click)="prev()"></i>
             </div>
@@ -9,7 +9,8 @@
             </div>
         </div>
         <div class="info">
-
+            <h4 class="title">{{images[index].title}}</h4>
+            <p class="description">{{images[index].description}}</p>
         </div>
     </div>
 </div>
