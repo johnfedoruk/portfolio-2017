@@ -37,3 +37,6 @@ small {
 .cream-bg {
 	background-color: #f6f7f9;
 }
+perfect-scrollbar {
+    overflow: hidden !important;
+}
