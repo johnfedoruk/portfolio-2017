@@ -6,7 +6,7 @@
             </td>
             <td>
                 <div class="title"><a [href]="project.url" target="_blank">{{project.name}}</a></div>
-                {{project.role}} ‧ {{project.start | date:"yyyy"}} - {{project.end?(project.end|date:"yyyy"):"present"}}
+                {{project.role}} ‧ {{project.start | string2Date | date:"yyyy"}} - {{project.end?(project.end | string2Date | date:"yyyy"):"present"}}
             </td>
         </tr>
     </table>

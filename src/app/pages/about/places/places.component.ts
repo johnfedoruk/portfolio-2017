@@ -17,15 +17,7 @@ export class PlacesComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptions.push(
             this.profile.getLocations().subscribe(
-                locations => this.locations = locations.reverse().map(location=>{
-                    location.start = new Date(location.start);
-                    location.start.setDate(location.start.getDate()+1);
-                    if(location.end!==undefined) {
-                        location.end = new Date(location.end);
-                        location.end.setDate(location.end.getDate()+1);
-                    }
-                    return location;
-                })
+                locations => this.locations = locations.reverse()
             )
         )
     }

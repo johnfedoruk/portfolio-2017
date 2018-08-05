@@ -6,7 +6,7 @@
             </td>
             <td>
                 <div class="title"><a [href]="location.url" target="_blank">{{location.city}}, {{location.country}}</a></div>
-                {{location.start | date:"yyyy"}} - {{location.end?(location.end|date:"yyyy"):"present"}}
+                {{location.start | string2Date | date:"yyyy"}} - {{location.end?(location.end | string2Date |date:"yyyy"):"present"}}
             </td>
         </tr>
     </table>

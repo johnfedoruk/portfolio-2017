@@ -6,7 +6,7 @@
             </td>
             <td>
                 <div class="title"><a [href]="job.url" target="_blank">{{job.company}}</a></div>
-                {{job.title}} ‧ {{job.start | date:"yyyy"}} - {{job.end?(job.end|date:"yyyy"):"present"}} ‧ {{job.city}}
+                {{job.title}} ‧ {{job.start | string2Date | date:"yyyy"}} - {{job.end?(job.end | string2Date | date:"yyyy"):"present"}} ‧ {{job.city}}
             </td>
         </tr>
     </table>
