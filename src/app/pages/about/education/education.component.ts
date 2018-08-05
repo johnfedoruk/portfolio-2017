@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class EducationComponent implements OnInit, OnDestroy {
 
-    private educations: any[];
+    public educations: any[];
     private subscriptions: Subscription[] = [];
     
     constructor(private profile: ProfileService) { }

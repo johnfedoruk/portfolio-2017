@@ -10,7 +10,7 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class WorkComponent implements OnInit, OnDestroy {
 
-    private jobs: any[];
+    public jobs: any[];
     private subscriptions: Subscription[] = [];
     
     constructor(private profile: ProfileService) { }
