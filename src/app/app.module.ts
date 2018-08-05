@@ -35,6 +35,7 @@ import { SlideshowComponent } from './partials/slideshow/slideshow.component';
 import { SlideshowService } from "./services/slideshow.service";
 import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
+import { String2DatePipe } from './pipes/string-2-date.pipe';
 
 const routes: Routes = [
     {
@@ -149,7 +150,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ChatBoxComponent,
         SlideshowComponent,
         MessageComponent,
-        EmailComponent
+        EmailComponent,
+        String2DatePipe
     ],
     imports: [
         BrowserModule,
