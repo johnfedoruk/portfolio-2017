@@ -4,15 +4,27 @@ import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import * as _ from "lodash";
 import { environment } from 'environments/environment';
+import { Profile } from '../models/profile/profile';
+import { Info } from '../models/profile/info';
+import { Link } from '../models/profile/link';
+import { Contact } from '../models/profile/contact';
+import { Education } from '../models/profile/education';
+import { Work } from '../models/profile/work';
+import { Location } from '../models/profile/location';
+import { Project } from '../models/profile/project';
+import { Gallery } from '../models/profile/gallery';
+import { Photo } from '../models/profile/photo';
 
 @Injectable()
 export class ProfileService {
 
     private loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-    private profile: any;
+    private profile: Profile;
 
     constructor(private http: Http) {
-        this.http.get(`https://tech-profile.firebaseio.com/profiles/${environment.username}.json`).subscribe(
+        // const url: string = `https://tech-profile.firebaseio.com/profiles/${environment.username}.json`;
+        const url: string = `${environment.api}/portfolio/${environment.id}/profile`;
+        this.http.get(url).subscribe(
             (data) => {
                 this.profile = data.json();
                 this.loaded$.next(true);
@@ -20,8 +32,8 @@ export class ProfileService {
         )
     }
 
-    public getProfile(): Observable<any> {
-        return new Observable<any>(
+    public getProfile(): Observable<Profile> {
+        return new Observable<Profile>(
             observer => {
                 this.loaded$.subscribe(
                     (loaded: boolean) => {
@@ -33,8 +45,8 @@ export class ProfileService {
         );
     }
 
-    public getInfo(): Observable<any> {
-        return new Observable<any>(
+    public getInfo(): Observable<Info> {
+        return new Observable<Info>(
             observer => {
                 this.getProfile().subscribe(
                     profile => {
@@ -46,7 +58,7 @@ export class ProfileService {
     }
 
     public getName(): Observable<string> {
-        return new Observable<any>(
+        return new Observable<string>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -81,8 +93,8 @@ export class ProfileService {
         )
     }
 
-    public getContact(): Observable<any> {
-        return new Observable<any>(
+    public getContact(): Observable<Contact> {
+        return new Observable<Contact>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -93,8 +105,8 @@ export class ProfileService {
         )
     }
 
-    public getLinks(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getLinks(): Observable<Link[]> {
+        return new Observable<Link[]>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -132,8 +144,8 @@ export class ProfileService {
         )
     }
 
-    public getEducation(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getEducation(): Observable<Education[]> {
+        return new Observable<Education[]>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -145,8 +157,8 @@ export class ProfileService {
         )
     }
 
-    public getWork(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getWork(): Observable<Work[]> {
+        return new Observable<Work[]>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -158,8 +170,8 @@ export class ProfileService {
         )
     }
 
-    public getLocations(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getLocations(): Observable<Location[]> {
+        return new Observable<Location[]>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -171,8 +183,8 @@ export class ProfileService {
         )
     }
 
-    public getProjects(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getProjects(): Observable<Project[]> {
+        return new Observable<Project[]>(
             observer => {
                 this.getInfo().subscribe(
                     info => {
@@ -184,8 +196,8 @@ export class ProfileService {
         )
     }
 
-    public getPhotos(): Observable<any> {
-        return new Observable<any>(
+    public getPhotos(): Observable<Gallery> {
+        return new Observable<Gallery>(
             observer => {
                 this.getProfile().subscribe(
                     profile => {
@@ -196,8 +208,8 @@ export class ProfileService {
         );
     }
 
-    public getProfilePhotos(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getProfilePhotos(): Observable<Photo[]> {
+        return new Observable<Photo[]>(
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
@@ -209,8 +221,8 @@ export class ProfileService {
         );
     }
 
-    public getCoverPhotos(): Observable<any[]> {
-        return new Observable<any[]>(
+    public getCoverPhotos(): Observable<Photo[]> {
+        return new Observable<Photo[]>(
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
