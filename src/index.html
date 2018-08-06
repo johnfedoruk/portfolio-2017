@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Portfolio</title>
@@ -8,7 +9,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <style>
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+        background: #e9ebed;
+      }
+
+      #preloader {
+        display: block;
+        width: 200px;
+        height: 200px;
+        perspective: 800px;
+        perspective-origin: 50% 100px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50vw;
+        top: 50vh;
+      }
+
+      #cube {
+        position: relative;
+        width: 200px;
+        transform-style: preserve-3d;
+      }
+
+      #cube div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(59,89,151,0.6);
+        outline: 2px solid rgba(59,89,151,0.9);
+        color: rgba(255,255,233,0.8);
+      }
+
+      #cube div span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #top {
+        transform: rotateX(-90deg) translateY(-100px);
+        transform-origin: top center;
+      }
+
+      #bottom {
+        transform: rotateX(90deg) translateY(100px);
+        transform-origin: bottom center;
+      }
+
+      #left {
+        transform: rotateY(270deg) translateX(-100px);
+        transform-origin: center left;
+      }
+
+      #right {
+        transform: rotateY(-270deg) translateX(100px);
+        transform-origin: top right;
+      }
+
+      #front {
+        transform: translateZ(100px);
+      }
+
+      #back {
+        transform: translateZ(-100px) rotateY(180deg);
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+      }
+
+      #cube {
+        animation: spin 4s infinite linear;
+      }
+    </style>
+    <div id="preloader">
+      <div id="cube">
+        <div id="top"></div>
+        <div id="bottom"></div>
+        <div id="front">
+          <span>L</span>
+        </div>
+        <div id="right">
+          <span>O</span>
+        </div>
+        <div id="back">
+          <span>A</span>
+        </div>
+        <div id="left">
+          <span>D</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeLetter(v, i) {
+        try {
+          var pos = (i + 1) % 4;
+          var id;
+          if (pos === 0) id = 'left';
+          else if (pos === 3) id = 'back';
+          else if (pos === 2) id = 'right';
+          else if (pos === 1) id = 'front';
+          document.getElementById(id).querySelector('span').innerHTML = v;
+        } catch (e) { }
+      }
+      'ING...    '.split('').forEach(
+        function (v, i) {
+          setTimeout(function () { changeLetter(v, i) }, 950 + i * 1000);
+        }
+      );
+    </script>
+  </app-root>
 </body>
+
 </html>
