@@ -3,7 +3,7 @@ import { ProfileService } from 'app/services/profile.service';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { SlideshowService } from 'app/services/slideshow.service';
-import { Photo } from '../../../models/profile/photo';
+import { Photo } from '../../../models/common/photo';
 
 @Component({
     selector: 'app-profile-picture',

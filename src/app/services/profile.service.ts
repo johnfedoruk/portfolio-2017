@@ -6,14 +6,14 @@ import * as _ from "lodash";
 import { environment } from 'environments/environment';
 import { Profile } from '../models/profile/profile';
 import { Info } from '../models/profile/info';
-import { Link } from '../models/profile/link';
+import { Link } from '../models/common/link';
 import { Contact } from '../models/profile/contact';
 import { Education } from '../models/profile/education';
 import { Work } from '../models/profile/work';
 import { Location } from '../models/profile/location';
 import { Project } from '../models/profile/project';
 import { Gallery } from '../models/profile/gallery';
-import { Photo } from '../models/profile/photo';
+import { Photo } from '../models/common/photo';
 
 @Injectable()
 export class ProfileService {
