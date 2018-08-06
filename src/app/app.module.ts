@@ -36,6 +36,7 @@ import { SlideshowService } from "./services/slideshow.service";
 import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
 import { String2DatePipe } from './pipes/string-2-date.pipe';
+import { PostService } from './services/post.service';
 
 const routes: Routes = [
     {
@@ -164,6 +165,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     providers: [
         ProfileService,
         SlideshowService,
+        PostService,
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
