@@ -16,15 +16,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptions.push(
             this.profile.getProjects().subscribe(
-                projects => this.projects = projects.reverse().map(project=>{
-                    project.start = new Date(project.start);
-                    project.start.setDate(project.start.getDate()+1);
-                    if(project.end!==undefined) {
-                        project.end = new Date(project.end);
-                        project.end.setDate(project.end.getDate()+1);
-                    }
-                    return project;
-                })
+                projects => this.projects = projects.reverse()
             )
         )
     }

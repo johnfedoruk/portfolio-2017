@@ -6,7 +6,7 @@
 			</td>
 			<td>
 				<div class="title"><a [href]="education.url" target="_blank">{{education.institution}}</a></div>
-				{{education.focus}} ‧ {{education.start | date:"yyyy"}} - {{education.end?(education.end|date:"yyyy"):"present"}} ‧ {{education.city}}
+				{{education.focus}} ‧ {{education.start | string2Date | date:"yyyy"}} - {{education.end?(education.end | string2Date |date:"yyyy"):"present"}} ‧ {{education.city}}
 			</td>
 		</tr>
 	</table>

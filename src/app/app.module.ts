@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-// import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -35,6 +35,8 @@ import { SlideshowComponent } from './partials/slideshow/slideshow.component';
 import { SlideshowService } from "./services/slideshow.service";
 import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
+import { String2DatePipe } from './pipes/string-2-date.pipe';
+import { PostService } from './services/post.service';
 
 const routes: Routes = [
     {
@@ -115,9 +117,9 @@ const routes: Routes = [
     }
 ]
 
-const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-    suppressScrollX: true
-};
+// const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+//     suppressScrollX: true
+// };
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -149,7 +151,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ChatBoxComponent,
         SlideshowComponent,
         MessageComponent,
-        EmailComponent
+        EmailComponent,
+        String2DatePipe
     ],
     imports: [
         BrowserModule,
@@ -162,6 +165,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     providers: [
         ProfileService,
         SlideshowService,
+        PostService,
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

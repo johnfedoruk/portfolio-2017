@@ -10,7 +10,7 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class WorkComponent implements OnInit, OnDestroy {
 
-    private jobs: any[];
+    public jobs: any[];
     private subscriptions: Subscription[] = [];
     
     constructor(private profile: ProfileService) { }
@@ -18,15 +18,7 @@ export class WorkComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptions.push(
             this.profile.getWork().subscribe(
-                jobs => this.jobs = jobs.reverse().map(job=>{
-                    job.start = new Date(job.start);
-                    job.start.setDate(job.start.getDate()+1);
-                    if(job.end!==undefined) {
-                        job.end = new Date(job.end);
-                        job.end.setDate(job.end.getDate()+1);
-                    }
-                    return job;
-                })
+                jobs => this.jobs = jobs.reverse()
             )
         )
     }

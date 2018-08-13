@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class EducationComponent implements OnInit, OnDestroy {
 
-    private educations: any[];
+    public educations: any[];
     private subscriptions: Subscription[] = [];
     
     constructor(private profile: ProfileService) { }
@@ -17,15 +17,7 @@ export class EducationComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.subscriptions.push(
             this.profile.getEducation().subscribe(
-                educations => this.educations = educations.reverse().map(ed=>{
-                    ed.start = new Date(ed.start);
-                    ed.start.setDate(ed.start.getDate()+1);
-                    if(ed.end!==undefined) {
-                        ed.end = new Date(ed.end);
-                        ed.end.setDate(ed.end.getDate()+1);
-                    }
-                    return ed;
-                })
+                educations => this.educations = educations.reverse()
             )
         )
     }

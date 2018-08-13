@@ -3,6 +3,7 @@ import { ProfileService } from 'app/services/profile.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import { SlideshowService } from 'app/services/slideshow.service';
+import { Photo } from '../../../models/common/photo';
 
 @Component({
     selector: 'app-cover-photo',
@@ -12,8 +13,8 @@ import { SlideshowService } from 'app/services/slideshow.service';
 export class CoverPhotoComponent implements OnInit, OnDestroy {
 
     public name: string;
-    public coverPhoto: string;
-    public coverPhotos: string[];
+    public coverPhoto: Photo;
+    public coverPhotos: Photo[];
     private subscriptions: Subscription[] = [];
 
     constructor(private profile: ProfileService, private slideshow:SlideshowService) { }
