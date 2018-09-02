@@ -37,6 +37,7 @@ import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
 import { String2DatePipe } from './pipes/string-2-date.pipe';
 import { PostService } from './services/post.service';
+import { NpmComponent } from './pages/code/npm/npm.component';
 
 const routes: Routes = [
     {
@@ -87,8 +88,8 @@ const routes: Routes = [
                 component: CodeOverviewComponent
             },
             {
-                path: "**",
-                component: FilesComponent
+                path: "npm",
+                component: NpmComponent
             }
         ]
     },
@@ -152,7 +153,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         SlideshowComponent,
         MessageComponent,
         EmailComponent,
-        String2DatePipe
+        String2DatePipe,
+        NpmComponent
     ],
     imports: [
         BrowserModule,
