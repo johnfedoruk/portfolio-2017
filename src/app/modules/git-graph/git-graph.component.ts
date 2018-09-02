@@ -16,7 +16,7 @@ declare const $: any;
 export class GitGraphComponent implements OnInit, OnDestroy {
     public _username: string;
     public graph: string;
-    public contributions: string;
+    public contributions: number;
     @Input("proxy")
     public proxy: string = "http://localhost:9090/";
     @Input("proxy-options")

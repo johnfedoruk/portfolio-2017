@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class CommitService {
 
-    private cache: { [key: string]: string } = {};
+    private cache: { [key: string]: any } = {};
     constructor(private http: Http) { }
 
-    public commitCount(username: string, proxy?: string, proxy_options?: string): Observable<string> {
-        return new Observable<string>(
+    public commitCount(username: string, proxy?: string, proxy_options?: string): Observable<number> {
+        return new Observable<number>(
             observer => {
-                const url: string = `${proxy ? proxy : "https://"}github.com/${username}${proxy_options ? proxy_options : ""}`;
+                const url: string = `${environment.api}/github/${username}/contributions`;
                 if(this.cache[url]!==undefined) {
                     observer.next(this.cache[url]);
                     observer.complete();
@@ -20,8 +21,7 @@ export class CommitService {
                     this.http.get(url).subscribe(
                         data => {
                             const body: string = (<any>data)._body;
-                            const regex = /mb-2\">([\s\S]*?)contributions/im;
-                            const contributions = body.match(regex)[1].trim();
+                            const contributions: number = +body;
                             this.cache[url] = contributions;
                             observer.next(contributions);
                             observer.complete();
@@ -35,7 +35,7 @@ export class CommitService {
     public commitGraph(username: string, proxy?: string, proxy_options?: string): Observable<string> {
         return new Observable<string>(
             observer => {
-                const url: string = `${proxy ? proxy : "https://"}github.com/users/${username}/contributions${proxy_options ? proxy_options : ""}`;
+                const url: string = `${environment.api}/github/${username}/graph`;
                 if(this.cache[url]!==undefined) {
                     observer.next(this.cache[url]);
                     observer.complete();
