@@ -43,7 +43,8 @@ export class CommitService {
                 this.http.get(url).subscribe(
                     data => {
                         const body: string = (<any>data)._body;
-                        const graph: string = body;
+                        const regex: RegExp = /<text(.*?)<\/text>/g;
+                        const graph: string = body.replace(regex,'');
                         this.cache[url] = graph;
                         observer.next(graph);
                         observer.complete();
