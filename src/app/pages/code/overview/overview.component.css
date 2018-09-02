@@ -2,3 +2,15 @@
 	padding: 30px;
 	display: block;
 }
+.link {
+	display: inline-block;
+	width: 150px;
+	height: 100px;
+	position: relative;
+}
+.link>a {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
