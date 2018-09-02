@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -162,7 +163,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         HttpModule,
         RouterModule.forRoot(routes),
         GitGraphModule,
-        PerfectScrollbarModule
+        PerfectScrollbarModule,
+        MarkdownToHtmlModule,
     ],
     providers: [
         ProfileService,
