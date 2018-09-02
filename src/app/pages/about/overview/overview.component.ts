@@ -10,7 +10,7 @@ import { ProfileService } from 'app/services/profile.service';
 })
 export class OverviewComponent implements OnInit, OnDestroy {
 
-    public commit_count: string;
+    public commit_count: number;
     public emails: string[];
     public phones: string[];
     public github: string;
