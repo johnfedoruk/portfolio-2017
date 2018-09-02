@@ -3,12 +3,12 @@
         <img [src]="link.img" width="100px">
     </a>
 </div>
-<p>Public packages published on NPM.</p>
+<p>Public packages published on NPM. Please note that this list does not include packages published with my other organizations.</p>
 <h2 *ngIf="packages">{{packages.length}} packages</h2>
 <hr>
 <div *ngFor="let package of packages">
-  <h3>{{package.name}}</h3>
-  <p>{{package.description ? package.description : 'No description...'}}</p>
+  <h3><a [href]="'https://npmjs.com/'+package.name" target="_blank">{{package.name}}</a></h3>
+  <p [innerHTML]="package.description ? (package.description|MarkdownToHtml) : 'No description...'"></p>
   <p>
     published {{package.version}}
     <span *ngIf="package.homepage">•</span>
