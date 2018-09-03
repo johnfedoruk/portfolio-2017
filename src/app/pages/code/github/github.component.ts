@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Http } from '@angular/http';
 
+declare const colorTag: any;
+
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
@@ -25,6 +27,17 @@ export class GithubComponent implements OnInit {
         this.repositories = res.json();
       }
     );
+  }
+
+  public colorTag(lang: string): string {
+    if (!lang) {
+      return undefined;
+    }
+    try {
+      return `#${colorTag(lang).hex()}`; 
+    } catch (e) {
+      return undefined;
+    }
   }
 
 }

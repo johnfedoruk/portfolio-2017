@@ -2,6 +2,12 @@
 	padding: 30px;
 	display: block;
 }
+.language-color {
+    height: 13px;
+    width: 13px;
+    border-radius: 13px;
+    display: inline-block;
+}
 .link {
 	display: inline-block;
 	width: 150px;
