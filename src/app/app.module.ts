@@ -39,6 +39,7 @@ import { EmailComponent } from './pages/contact/email/email.component';
 import { String2DatePipe } from './pipes/string-2-date.pipe';
 import { PostService } from './services/post.service';
 import { NpmComponent } from './pages/code/npm/npm.component';
+import { GithubComponent } from './pages/code/github/github.component';
 
 const routes: Routes = [
     {
@@ -91,6 +92,10 @@ const routes: Routes = [
             {
                 path: "npm",
                 component: NpmComponent
+            },
+            {
+                path: "github",
+                component: GithubComponent
             }
         ]
     },
@@ -155,7 +160,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         MessageComponent,
         EmailComponent,
         String2DatePipe,
-        NpmComponent
+        NpmComponent,
+        GithubComponent
     ],
     imports: [
         BrowserModule,

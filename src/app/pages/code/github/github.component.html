@@ -1,0 +1,18 @@
+<div class="link">
+    <a [href]="link.url" target="_blank">
+        <img [src]="link.img" width="100px">
+    </a>
+</div>
+<p>Public repositories published on GitHub. Please note that this list does not include repositories published with my other organizations.</p>
+<h2 *ngIf="repositories">{{repositories.length}} repositories</h2>
+<hr>
+<div *ngFor="let repository of repositories">
+  <h3><a [href]="repository.html_url" target="_blank">{{repository.name}}</a></h3>
+  <p [innerHTML]="repository.description ? (repository.description|MarkdownToHtml) : 'No description...'"></p>
+  <p>
+    {{repository.language}}
+    <span *ngIf="repository.homepage">•</span>
+    <a *ngIf="repository.homepage" [href]="repository.homepage" target="_blank">homepage</a>
+  </p>
+  <hr>
+</div>
