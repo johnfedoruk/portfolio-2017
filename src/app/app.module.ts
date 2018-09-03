@@ -105,13 +105,13 @@ const routes: Routes = [
         children: [
             {
                 path: "",
-                redirectTo: "message",
+                redirectTo: "email",
                 pathMatch: "full"
             },
-            {
-                path: "message",
-                component: MessageComponent
-            },
+            // {
+            //     path: "message",
+            //     component: MessageComponent
+            // },
             {
                 path: "email",
                 component: EmailComponent
