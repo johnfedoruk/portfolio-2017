@@ -40,6 +40,7 @@ import { String2DatePipe } from './pipes/string-2-date.pipe';
 import { PostService } from './services/post.service';
 import { NpmComponent } from './pages/code/npm/npm.component';
 import { GithubComponent } from './pages/code/github/github.component';
+import { MailService } from './services/mail.service';
 
 const routes: Routes = [
     {
@@ -176,6 +177,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ProfileService,
         SlideshowService,
         PostService,
+        MailService,
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
