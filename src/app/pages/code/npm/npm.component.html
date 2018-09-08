@@ -1,0 +1,18 @@
+<div class="link">
+    <a [href]="link.url" target="_blank">
+        <img [src]="link.img" width="100px">
+    </a>
+</div>
+<p>Public packages published on NPM. Please note that this list does not include packages published with my other organizations.</p>
+<h2 *ngIf="packages">{{packages.length}} packages</h2>
+<hr>
+<div *ngFor="let package of packages">
+  <h3><a [href]="'https://npmjs.com/'+package.name" target="_blank">{{package.name}}</a></h3>
+  <p [innerHTML]="package.description ? (package.description|MarkdownToHtml) : 'No description...'"></p>
+  <p>
+    published {{package.version}}
+    <span *ngIf="package.homepage">•</span>
+    <a *ngIf="package.homepage" [href]="package.homepage" target="_blank">homepage</a>
+  </p>
+  <hr>
+</div>

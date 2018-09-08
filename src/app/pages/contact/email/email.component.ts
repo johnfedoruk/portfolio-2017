@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MailService } from '../../../services/mail.service';
 
 @Component({
     selector: 'app-email',
@@ -7,12 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailComponent implements OnInit {
 
-    constructor() { }
+    public sent: boolean = false;
+    public disabled: boolean = false;
+    public from: string;
+    public subject: string;
+    public body: string;
+
+    constructor(private mail_service: MailService) { }
 
     ngOnInit() {
     }
-    public onSubmit(event: Event): void {
-        event.preventDefault();
-        console.log("submit");
+
+    public async onSubmit(form: NgForm): Promise<void> {
+        if (!form.valid || this.disabled || this.sent) {
+            return;
+        }
+        const from: string = this.from;
+        const subject: string = this.subject;
+        const body: string = this.body;
+        const email = {
+            from, subject, body,
+        };
+        try {
+            this.disabled = true;
+            await this.mail_service.sendContactEmail(email);
+            this.sent = true;
+        } catch (e) {
+            console.error(e);
+            this.disabled = false;
+        }
     }
 }

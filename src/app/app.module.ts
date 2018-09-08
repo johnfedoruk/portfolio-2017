@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -37,6 +38,9 @@ import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
 import { String2DatePipe } from './pipes/string-2-date.pipe';
 import { PostService } from './services/post.service';
+import { NpmComponent } from './pages/code/npm/npm.component';
+import { GithubComponent } from './pages/code/github/github.component';
+import { MailService } from './services/mail.service';
 
 const routes: Routes = [
     {
@@ -87,8 +91,12 @@ const routes: Routes = [
                 component: CodeOverviewComponent
             },
             {
-                path: "**",
-                component: FilesComponent
+                path: "npm",
+                component: NpmComponent
+            },
+            {
+                path: "github",
+                component: GithubComponent
             }
         ]
     },
@@ -98,13 +106,13 @@ const routes: Routes = [
         children: [
             {
                 path: "",
-                redirectTo: "message",
+                redirectTo: "email",
                 pathMatch: "full"
             },
-            {
-                path: "message",
-                component: MessageComponent
-            },
+            // {
+            //     path: "message",
+            //     component: MessageComponent
+            // },
             {
                 path: "email",
                 component: EmailComponent
@@ -152,7 +160,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         SlideshowComponent,
         MessageComponent,
         EmailComponent,
-        String2DatePipe
+        String2DatePipe,
+        NpmComponent,
+        GithubComponent
     ],
     imports: [
         BrowserModule,
@@ -160,12 +170,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         HttpModule,
         RouterModule.forRoot(routes),
         GitGraphModule,
-        PerfectScrollbarModule
+        PerfectScrollbarModule,
+        MarkdownToHtmlModule,
     ],
     providers: [
         ProfileService,
         SlideshowService,
         PostService,
+        MailService,
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

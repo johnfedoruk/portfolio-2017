@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
     routes: Array<{ title: string; link: string }> = [
-        {
-            title: "Message",
-            link: "message"
-        },
+        // {
+        //     title: "Message",
+        //     link: "message"
+        // },
         {
             title: "Email",
             link: "email"
