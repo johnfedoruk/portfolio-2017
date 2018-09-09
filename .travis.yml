@@ -1,0 +1,30 @@
+#.travis.yml
+
+language: node_js
+node_js:
+  - "8.9"
+
+branches:
+  only:
+    - master
+    - develop
+
+before_script:
+  - npm install
+
+script:
+  - npm run lint
+  - npm run test -- --browsers PhantomJS --watch=false
+  - npm build -- --prod --aot
+
+deploy:
+  provider: firebase
+  token:
+    secure: ApNprz/IbK2aiVUVl/GRmXxiRiYBQyy7vPlVsJJayWrXnNzrukSRalH58PdxItduemEVSWJgiKHzRDyrN5d2jqCfM9HtCO1Je61ooxVkSZtD1s3w7NhRaDeqSd9wpdxn5Ln6iIUMH5Foh8PBMfc0VpMhZqOXdqCV1+OurBcWeyyeSyH8p/zenNyJLjt4xWxKnyh0yclRuv1lGPaPt54vvYsayCtD/UXsgOyUvz2t3RuWyLUlsg/A5ltIy+JGh4w/CbH2wg7LKni+eQ0aP4eaoOoiI/ZEfTk2BrK5WpQfNQcC1qTUf+NYBV56zGNPhMZjiCPbj/L+AG5vOc7ipxJh8HXvUmjWsThFb+ppbGIo31kmGmnPcpgqjm0EdAKaW1egDk/W/4tkZ0RJZCP9by7CF/LYbqgwJj0S+cOi7SnU33paja5slGvxAvDKos4xfW5XLxZRu58Yf6z3XdUkcuVTsOf5B5s3Eo2V8/7bCqvvIwoeKIx2SUxtAUUaLyDYoBLUYt6R3yLvYYbkuItGDian53/LvkPTpoue9eLpvgZLxhTFWsRhY/TxnVZf2D1+LpvJqAal4ZGwX5oStvfCxV2eu99tysLiSURkS70Qp7LY2Bripkf8wIXeDpkKJnK0RZpbhMY7g+nQzmB46ugRbKThbfFgHw1AqT17xu6w+InKDYI=
+  on:
+    branch: master
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
