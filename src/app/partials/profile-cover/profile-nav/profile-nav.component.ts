@@ -7,22 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileNavComponent implements OnInit {
 
-  routes:Array<{title:string;link:string}> = [
+  routes: Array<{title: string; link: string}> = [
     {
-      title:"Home",
-      link:"/"
+      title: 'Home',
+      link: '/'
     },
     {
-      title:"About",
-      link:"/about"
+      title: 'About',
+      link: '/about'
     },
     {
-      title:"Code",
-      link:"/code"
+      title: 'Code',
+      link: '/code'
     },
     {
-      title:"Contact",
-      link:"/contact"
+      title: 'Contact',
+      link: '/contact'
     }
   ];
 

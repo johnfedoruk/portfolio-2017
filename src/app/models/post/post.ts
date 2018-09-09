@@ -1,4 +1,4 @@
-import { ID } from "../common/id";
+import { ID } from '../common/id';
 
 export interface Post {
     id: ID;

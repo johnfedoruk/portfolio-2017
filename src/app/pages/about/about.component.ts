@@ -7,30 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  routes:Array<{title:string;link:string}> = [
+  routes: Array<{title: string; link: string}> = [
     {
-      title:"Overview",
-      link:"overview"
+      title: 'Overview',
+      link: 'overview'
     },
     {
-      title:"Work",
-      link:"work"
+      title: 'Work',
+      link: 'work'
     },
     {
-      title:"Education",
-      link:"education"
+      title: 'Education',
+      link: 'education'
     },
     {
-      title:"Projects",
-      link:"projects"
+      title: 'Projects',
+      link: 'projects'
     },
     {
-      title:"Places",
-      link:"places"
+      title: 'Places',
+      link: 'places'
     },
     {
-      title:"Contact",
-      link:"contact"
+      title: 'Contact',
+      link: 'contact'
     }
   ];
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-const OWNER: string = "John Fedoruk";
-const USER: string = "You";
+const OWNER = 'John Fedoruk';
+const USER = 'You';
 
 interface Message {
   date: Date;
@@ -20,11 +20,11 @@ export class ChatBoxComponent implements OnInit {
   @ViewChild('messageContainer')
   private messageContainer: any;
 
-  public online:boolean = Math.random()>0.5?true:false;
-  public chatBoxOpen:boolean = false;
+  public online: boolean = Math.random() > 0.5 ? true : false;
+  public chatBoxOpen = false;
   readonly OWNER: string = OWNER;
   readonly USER: string = USER;
-  public input:string;
+  public input: string;
   public messages: Message[] = [];
 
   constructor() { }
@@ -46,50 +46,51 @@ export class ChatBoxComponent implements OnInit {
 
   // below was all copied from ContactComponent - needs to be refactored into single component
 
-  public onSendMessage():boolean {
-    if(!this.input||this.input.length<1)
+  public onSendMessage(): boolean {
+    if (!this.input || this.input.length < 1) {
       return false;
+    }
     this.onNewMessage({
       date: new Date(),
-      message:this.input,
-      sender:USER
+      message: this.input,
+      sender: USER
     });
-    this.input = "";
+    this.input = '';
     // send a dummy response by OWNER
-    setTimeout(()=>{
+    setTimeout(() => {
       this.onNewMessage(this.randomMessage(OWNER));
-    },Math.floor(Math.random()*5000));
+    }, Math.floor(Math.random() * 5000));
     return false;
   }
 
-  public onFileAttach($event:any) {
+  public onFileAttach($event: any) {
     const FILE = $event.target.files[0];
     console.log(FILE);
     this.onNewMessage({
       date: new Date(),
-      message:`attached new file '${FILE.name}'\n${Math.floor(FILE.size/1000)}kB`,
-      sender:USER
+      message: `attached new file '${FILE.name}'\n${Math.floor(FILE.size / 1000)}kB`,
+      sender: USER
     });
   }
 
-  private randomMessage(sender:string=this.randomSender()):Message {
+  private randomMessage(sender: string= this.randomSender()): Message {
     return {
       date: new Date(),
-      message:this.randomText(),
-      sender:sender
+      message: this.randomText(),
+      sender: sender
     }
   }
 
-  private randomText():string {
-    const LOOPS:number = Math.floor(Math.random()*20 + 1);
-    let txt:string = "";
-    for(let i=0;i<LOOPS;i++) {
-      txt+=Math.random()>0.5?"Hello ":"world ";
+  private randomText(): string {
+    const LOOPS: number = Math.floor(Math.random() * 20 + 1);
+    let txt = '';
+    for (let i = 0; i < LOOPS; i++) {
+      txt += Math.random() > 0.5 ? 'Hello ' : 'world ';
     }
     return txt;
   }
 
-  private onNewMessage(message:Message):void {
+  private onNewMessage(message: Message): void {
     this.messages.push(message);
     this.scrollToBottom();
   }
@@ -100,11 +101,12 @@ export class ChatBoxComponent implements OnInit {
 
   private scrollToBottom(): void {
         try {
-      setTimeout(()=>{
-        if(this.messageContainer)
+      setTimeout(() => {
+        if (this.messageContainer) {
                 this.messageContainer.elementRef.nativeElement.scrollTop = this.messageContainer.elementRef.nativeElement.scrollHeight;
-      },100);
-        } catch(err) { }                 
+        }
+      }, 100);
+        } catch (err) { }
     }
 
 

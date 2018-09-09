@@ -12,12 +12,11 @@ export class CommitService {
     public commitCount(username: string, proxy?: string, proxy_options?: string): Observable<number> {
         return new Observable<number>(
             observer => {
-                const url: string = `${environment.api}/github/${username}/contributions`;
-                if(this.cache[url]!==undefined) {
+                const url = `${environment.api}/github/${username}/contributions`;
+                if (this.cache[url] !== undefined) {
                     observer.next(this.cache[url]);
                     observer.complete();
-                }
-                else {
+                } else {
                     this.http.get(url).subscribe(
                         data => {
                             const body: string = (<any>data)._body;
@@ -35,8 +34,8 @@ export class CommitService {
     public commitGraph(username: string, proxy?: string, proxy_options?: string): Observable<string> {
         return new Observable<string>(
             observer => {
-                const url: string = `${environment.api}/github/${username}/graph`;
-                if(this.cache[url]!==undefined) {
+                const url = `${environment.api}/github/${username}/graph`;
+                if (this.cache[url] !== undefined) {
                     observer.next(this.cache[url]);
                     observer.complete();
                 }
@@ -44,7 +43,7 @@ export class CommitService {
                     data => {
                         const body: string = (<any>data)._body;
                         const regex: RegExp = /<text(.*?)<\/text>/g;
-                        const graph: string = body.replace(regex,'');
+                        const graph: string = body.replace(regex, '');
                         this.cache[url] = graph;
                         observer.next(graph);
                         observer.complete();

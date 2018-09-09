@@ -12,8 +12,9 @@ export class TimelineComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    for(let i=0;i<40;i++)
-      this.array.push(i%2==0?"Hello":"World");
+    for (let i = 0; i < 40; i++) {
+      this.array.push(i % 2 === 0 ? 'Hello' : 'World');
+    }
   }
 
 }

@@ -5,9 +5,9 @@
 
 export const environment = {
     production: false,
-    username: "johnfedoruk",
+    username: 'johnfedoruk',
     id: 0,
-    api: "http://localhost:3000",
-    github: "johnfedoruk",
-    npm: "johnfedoruk",
+    api: 'http://localhost:3000',
+    github: 'johnfedoruk',
+    npm: 'johnfedoruk',
 };

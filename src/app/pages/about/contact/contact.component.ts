@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService } from 'app/services/profile.service';
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'app-contact',

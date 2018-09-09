@@ -8,7 +8,7 @@ export class MailService {
   constructor(private http: Http) { }
 
   public async sendContactEmail(mail: { subject: string, from: string, body: string }): Promise<void> {
-    const url: string = `${environment.api}/mail/${environment.id}/contact`;
+    const url = `${environment.api}/mail/${environment.id}/contact`;
     await this.http.post(url, mail).toPromise();
   }
 }

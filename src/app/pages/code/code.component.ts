@@ -9,12 +9,12 @@ export class CodeComponent implements OnInit {
 
   routes: Array<{ title: string; link: string }> = [
     {
-      title: "GitHub",
-      link: "github",
+      title: 'GitHub',
+      link: 'github',
     },
     {
-      title: "NPM",
-      link: "npm",
+      title: 'NPM',
+      link: 'npm',
     },
   ];
 

@@ -9,7 +9,7 @@ declare const $: any;
 })
 export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly STICKY:string = "app-sidebar";
+  readonly STICKY: string = 'app-sidebar';
 
   constructor() { }
 
@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     // detach sticky kit
-    $(this.STICKY).trigger("sticky_kit:detach");
+    $(this.STICKY).trigger('sticky_kit:detach');
   }
 
 }

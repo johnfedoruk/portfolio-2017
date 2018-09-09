@@ -12,7 +12,7 @@ export class WorkComponent implements OnInit, OnDestroy {
 
     public jobs: any[];
     private subscriptions: Subscription[] = [];
-    
+
     constructor(private profile: ProfileService) { }
 
     ngOnInit() {

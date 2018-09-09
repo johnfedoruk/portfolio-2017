@@ -11,7 +11,7 @@ export class EducationComponent implements OnInit, OnDestroy {
 
     public educations: any[];
     private subscriptions: Subscription[] = [];
-    
+
     constructor(private profile: ProfileService) { }
 
     ngOnInit() {

@@ -19,7 +19,7 @@ export class NpmComponent implements OnInit {
   constructor(private http: Http) { }
 
   public ngOnInit(): void {
-    const url: string = `${environment.api}/npm/${environment.npm}/packages`;
+    const url = `${environment.api}/npm/${environment.npm}/packages`;
     this.http.get(url).subscribe(
       (res) => {
         this.packages = res.json();
