@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Build Status](https://travis-ci.org/johnfedoruk/portfolio-2019.svg?branch=master)](https://travis-ci.org/johnfedoruk/portfolio-2019)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
 ## Development server
