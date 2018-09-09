@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { NpmComponent } from './npm.component';
 
 describe('NpmComponent', () => {
@@ -8,7 +9,11 @@ describe('NpmComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NpmComponent ]
+      declarations: [ NpmComponent ],
+      imports: [
+        MarkdownToHtmlModule,
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
   }));

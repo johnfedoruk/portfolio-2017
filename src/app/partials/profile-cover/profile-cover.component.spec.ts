@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileCoverComponent } from './profile-cover.component';
+import { CoverPhotoComponent } from './cover-photo/cover-photo.component';
+import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
+import { ProfileNavComponent } from './profile-nav/profile-nav.component';
+import { ProfileService } from '../../services/profile.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SlideshowService } from '../../services/slideshow.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ProfileCoverComponent', () => {
   let component: ProfileCoverComponent;
@@ -8,7 +15,20 @@ describe('ProfileCoverComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileCoverComponent ]
+      declarations: [
+        ProfileCoverComponent,
+        CoverPhotoComponent,
+        ProfilePictureComponent,
+        ProfileNavComponent
+      ],
+      providers: [
+        ProfileService,
+        SlideshowService
+      ],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));

@@ -35,14 +35,16 @@ export class SlideshowComponent implements OnInit {
         $event.stopPropagation();
     }
 
-    public prev():void {
-        if(this.index!==0)
+    public prev(): void {
+        if (this.index !== 0) {
             this.index--;
+        }
     }
 
     public next(): void {
-        if(this.index!==this.images.length-1)
+        if (this.index !== this.images.length - 1) {
             this.index++;
+        }
     }
 
 }

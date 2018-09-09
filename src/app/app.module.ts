@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -17,7 +17,7 @@ import { ProfileNavComponent } from './partials/profile-cover/profile-nav/profil
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SidebarComponent } from './pages/profile/sidebar/sidebar.component';
 import { TimelineComponent } from './pages/profile/timeline/timeline.component';
-import { GitGraphModule } from "app/modules/git-graph/git-graph.module";
+import { GitGraphModule } from 'app/modules/git-graph/git-graph.module';
 import { Error404Component } from './pages/error-404/error-404.component';
 import { AboutComponent } from './pages/about/about.component';
 import { OverviewComponent as AboutOverviewComponent } from './pages/about/overview/overview.component';
@@ -33,7 +33,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ChatBoxComponent } from './partials/chat-box/chat-box.component';
 import { ProfileService } from 'app/services/profile.service';
 import { SlideshowComponent } from './partials/slideshow/slideshow.component';
-import { SlideshowService } from "./services/slideshow.service";
+import { SlideshowService } from './services/slideshow.service';
 import { MessageComponent } from './pages/contact/message/message.component';
 import { EmailComponent } from './pages/contact/email/email.component';
 import { String2DatePipe } from './pipes/string-2-date.pipe';
@@ -44,83 +44,83 @@ import { MailService } from './services/mail.service';
 
 const routes: Routes = [
     {
-        path: "",
+        path: '',
         component: ProfileComponent
     },
     {
-        path: "about",
+        path: 'about',
         component: AboutComponent,
         children: [
             {
-                path: "",
-                redirectTo: "overview",
-                pathMatch: "full"
+                path: '',
+                redirectTo: 'overview',
+                pathMatch: 'full'
             },
             {
-                path: "overview",
+                path: 'overview',
                 component: AboutOverviewComponent
             },
             {
-                path: "work",
+                path: 'work',
                 component: AboutWorkComponent
             },
             {
-                path: "education",
+                path: 'education',
                 component: AboutEducationComponent
             },
             {
-                path: "projects",
+                path: 'projects',
                 component: AboutProjectsComponent
             },
             {
-                path: "places",
+                path: 'places',
                 component: AboutPlacesComponent
             },
             {
-                path: "contact",
+                path: 'contact',
                 component: AboutContactComponent
             }
         ]
     },
     {
-        path: "code",
+        path: 'code',
         component: CodeComponent,
         children: [
             {
-                path: "",
+                path: '',
                 component: CodeOverviewComponent
             },
             {
-                path: "npm",
+                path: 'npm',
                 component: NpmComponent
             },
             {
-                path: "github",
+                path: 'github',
                 component: GithubComponent
             }
         ]
     },
     {
-        path: "contact",
+        path: 'contact',
         component: ContactComponent,
         children: [
             {
-                path: "",
-                redirectTo: "email",
-                pathMatch: "full"
+                path: '',
+                redirectTo: 'email',
+                pathMatch: 'full'
             },
             // {
             //     path: "message",
             //     component: MessageComponent
             // },
             {
-                path: "email",
+                path: 'email',
                 component: EmailComponent
             }
         ]
     },
     {
-        path: "**",
+        path: '**',
         component: Error404Component
     }
 ]
@@ -167,11 +167,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
         RouterModule.forRoot(routes),
         GitGraphModule,
         PerfectScrollbarModule,
         MarkdownToHtmlModule,
+        HttpClientModule,
     ],
     providers: [
         ProfileService,

@@ -48,8 +48,9 @@ export class SidebarComponent implements OnInit, OnDestroy {
                 jobs => this.jobs = jobs.reverse()
             )
         );
-        for (let i = 0; i < 15; i++)
-            this.array.push(i % 2 == 0 ? "Hello World Hello World Hello World Hello World" : "World");
+        for (let i = 0; i < 15; i++) {
+            this.array.push(i % 2 === 0 ? 'Hello World Hello World Hello World Hello World' : 'World');
+        }
     }
 
     ngOnDestroy() {

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-const OWNER: string = "John Fedoruk";
-const USER: string = "You";
+const OWNER = 'John Fedoruk';
+const USER = 'You';
 
 interface Message {
     date: Date;
@@ -34,14 +34,15 @@ export class MessageComponent implements OnInit {
     }
 
     public onSendMessage(): boolean {
-        if (!this.input || this.input.length < 1)
+        if (!this.input || this.input.length < 1) {
             return false;
+        }
         this.onNewMessage({
             date: new Date(),
             message: this.input,
             sender: USER
         });
-        this.input = "";
+        this.input = '';
         // send a dummy response by OWNER
         setTimeout(() => {
             this.onNewMessage(this.randomMessage(OWNER));
@@ -69,9 +70,9 @@ export class MessageComponent implements OnInit {
 
     private randomText(): string {
         const LOOPS: number = Math.floor(Math.random() * 20 + 1);
-        let txt: string = "";
+        let txt = '';
         for (let i = 0; i < LOOPS; i++) {
-            txt += Math.random() > 0.5 ? "Hello " : "world ";
+            txt += Math.random() > 0.5 ? 'Hello ' : 'world ';
         }
         return txt;
     }

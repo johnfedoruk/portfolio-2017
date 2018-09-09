@@ -1,8 +1,8 @@
 export const environment = {
     production: true,
-    username: "johnfedoruk",
+    username: 'johnfedoruk',
     id: 0,
-    api: "http://localhost:3000",
-    github: "johnfedoruk",
-    npm: "johnfedoruk",
+    api: 'https://us-central1-tech-profile.cloudfunctions.net/api',
+    github: 'johnfedoruk',
+    npm: 'johnfedoruk',
 };

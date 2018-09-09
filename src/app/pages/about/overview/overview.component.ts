@@ -26,7 +26,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
                 github => {
                     this.github = github;
                     this.subscriptions.push(
-                        this.commits.commitCount(this.github, "http://localhost:9090/").subscribe(
+                        this.commits.commitCount(this.github, 'http://localhost:9090/').subscribe(
                             commits => this.commit_count = commits
                         )
                     );

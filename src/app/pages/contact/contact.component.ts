@@ -12,8 +12,8 @@ export class ContactComponent implements OnInit {
         //     link: "message"
         // },
         {
-            title: "Email",
-            link: "email"
+            title: 'Email',
+            link: 'email'
         }
     ];
     ngOnInit() { }

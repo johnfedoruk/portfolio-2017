@@ -9,8 +9,8 @@ import { MailService } from '../../../services/mail.service';
 })
 export class EmailComponent implements OnInit {
 
-    public sent: boolean = false;
-    public disabled: boolean = false;
+    public sent = false;
+    public disabled = false;
     public from: string;
     public subject: string;
     public body: string;

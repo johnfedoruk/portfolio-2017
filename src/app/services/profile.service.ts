@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import * as _ from "lodash";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import * as _ from 'lodash';
 import { environment } from 'environments/environment';
 import { Profile } from '../models/profile/profile';
 import { Info } from '../models/profile/info';
@@ -21,12 +21,12 @@ export class ProfileService {
     private loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private profile: Profile;
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         // const url: string = `https://tech-profile.firebaseio.com/profiles/${environment.username}.json`;
-        const url: string = `${environment.api}/portfolio/${environment.id}/profile`;
+        const url = `${environment.api}/portfolio/${environment.id}/profile`;
         this.http.get(url).subscribe(
-            (data) => {
-                this.profile = data.json();
+            (data: Profile) => {
+                this.profile = data;
                 this.loaded$.next(true);
             }
         )
@@ -37,8 +37,9 @@ export class ProfileService {
             observer => {
                 this.loaded$.subscribe(
                     (loaded: boolean) => {
-                        if (loaded)
+                        if (loaded) {
                             observer.next(_.cloneDeep(this.profile));
+                        }
                     }
                 )
             }
@@ -213,8 +214,8 @@ export class ProfileService {
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
-                        _.remove(photos["profile-photos"], _.isEmpty);
-                        observer.next(photos["profile-photos"]);
+                        _.remove(photos['profile-photos'], _.isEmpty);
+                        observer.next(photos['profile-photos']);
                     }
                 )
             }
@@ -226,8 +227,8 @@ export class ProfileService {
             observer => {
                 this.getPhotos().subscribe(
                     photos => {
-                        _.remove(photos["cover-photos"], _.isEmpty);
-                        observer.next(photos["cover-photos"]);
+                        _.remove(photos['cover-photos'], _.isEmpty);
+                        observer.next(photos['cover-photos']);
                     }
                 )
             }

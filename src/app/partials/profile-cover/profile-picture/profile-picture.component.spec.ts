@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilePictureComponent } from './profile-picture.component';
+import { ProfileService } from '../../../services/profile.service';
+import { SlideshowService } from '../../../services/slideshow.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ProfilePictureComponent', () => {
   let component: ProfilePictureComponent;
@@ -8,7 +11,14 @@ describe('ProfilePictureComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfilePictureComponent ]
+      declarations: [ ProfilePictureComponent ],
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers: [
+        ProfileService,
+        SlideshowService
+      ]
     })
     .compileComponents();
   }));

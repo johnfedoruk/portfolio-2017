@@ -17,7 +17,7 @@ export class CoverPhotoComponent implements OnInit, OnDestroy {
     public coverPhotos: Photo[];
     private subscriptions: Subscription[] = [];
 
-    constructor(private profile: ProfileService, private slideshow:SlideshowService) { }
+    constructor(private profile: ProfileService, private slideshow: SlideshowService) { }
 
     ngOnInit() {
         this.subscriptions.push(

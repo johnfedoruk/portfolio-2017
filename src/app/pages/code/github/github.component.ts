@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
-import { Http } from '@angular/http';
 
 declare const colorTag: any;
 
@@ -10,7 +10,7 @@ declare const colorTag: any;
   styleUrls: ['./github.component.css']
 })
 export class GithubComponent implements OnInit {
-  
+
   public link = {
     img: 'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png',
     url: `https://github.com/${environment.github}`
@@ -18,13 +18,13 @@ export class GithubComponent implements OnInit {
 
   public repositories: any[];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public ngOnInit(): void {
-    const url: string = `${environment.api}/github/${environment.npm}/repositories`;
+    const url = `${environment.api}/github/${environment.npm}/repositories`;
     this.http.get(url).subscribe(
-      (res) => {
-        this.repositories = res.json();
+      (repositories: any[]) => {
+        this.repositories = repositories;
       }
     );
   }
@@ -34,7 +34,7 @@ export class GithubComponent implements OnInit {
       return undefined;
     }
     try {
-      return `#${colorTag(lang).hex()}`; 
+      return `#${colorTag(lang).hex()}`;
     } catch (e) {
       return undefined;
     }
