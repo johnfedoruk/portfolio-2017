@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
 import { Http } from '@angular/http';
 
@@ -16,13 +17,13 @@ export class NpmComponent implements OnInit {
 
   public packages: any[];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public ngOnInit(): void {
     const url = `${environment.api}/npm/${environment.npm}/packages`;
     this.http.get(url).subscribe(
-      (res) => {
-        this.packages = res.json();
+      (packages: any[]) => {
+        this.packages = packages;
       }
     );
   }

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmailComponent } from './email.component';
 import { MailService } from '../../../services/mail.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 
 describe('EmailComponent', () => {
@@ -16,7 +16,7 @@ describe('EmailComponent', () => {
         MailService
       ],
       imports: [
-        HttpModule,
+        HttpClientTestingModule,
         FormsModule
       ]
     })

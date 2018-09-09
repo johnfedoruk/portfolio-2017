@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ContactComponent } from './contact.component';
 import { EmailComponent } from './email/email.component';
 import { MessageComponent } from './message/message.component';
 import { MailService } from '../../services/mail.service';
-import { HttpModule } from '@angular/http';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +26,7 @@ describe('ContactComponent', () => {
       imports: [
         RouterTestingModule,
         PerfectScrollbarModule,
-        HttpModule,
+        HttpClientTestingModule,
         FormsModule
       ]
     })

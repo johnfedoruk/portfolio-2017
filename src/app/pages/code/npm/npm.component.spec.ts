@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
-
 import { NpmComponent } from './npm.component';
-import { HttpModule } from '@angular/http';
 
 describe('NpmComponent', () => {
   let component: NpmComponent;
@@ -13,7 +12,7 @@ describe('NpmComponent', () => {
       declarations: [ NpmComponent ],
       imports: [
         MarkdownToHtmlModule,
-        HttpModule
+        HttpClientTestingModule
       ]
     })
     .compileComponents();

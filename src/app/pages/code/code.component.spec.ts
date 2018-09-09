@@ -6,7 +6,7 @@ import { NpmComponent } from './npm/npm.component';
 import { GithubComponent } from './github/github.component';
 import { OverviewComponent } from './overview/overview.component';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CodeComponent', () => {
   let component: CodeComponent;
@@ -23,7 +23,7 @@ describe('CodeComponent', () => {
       imports: [
         MarkdownToHtmlModule,
         RouterTestingModule,
-        HttpModule
+        HttpClientTestingModule
       ]
     })
     .compileComponents();

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
 import { ProfileService } from '../../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { GitGraphComponent } from '../../../modules/git-graph/git-graph.component';
 import { HtmlPipe } from '../../../modules/git-graph/pipes/html.pipe';
 import { GitGraphModule } from '../../../modules/git-graph/git-graph.module';
@@ -20,7 +20,7 @@ describe('SidebarComponent', () => {
         ProfileService
       ],
       imports: [
-        HttpModule,
+        HttpClientTestingModule,
         GitGraphModule
       ]
     })

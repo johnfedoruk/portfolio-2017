@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { GitGraphComponent } from './git-graph.component';
 import { HtmlPipe } from './pipes/html.pipe';
@@ -12,7 +12,7 @@ describe('GitGraphComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ],
       declarations: [GitGraphComponent, HtmlPipe],
       providers: [CommitService],

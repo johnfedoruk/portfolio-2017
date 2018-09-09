@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
-import { Http } from '@angular/http';
 
 declare const colorTag: any;
 
@@ -18,13 +18,13 @@ export class GithubComponent implements OnInit {
 
   public repositories: any[];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public ngOnInit(): void {
     const url = `${environment.api}/github/${environment.npm}/repositories`;
     this.http.get(url).subscribe(
-      (res) => {
-        this.repositories = res.json();
+      (repositories: any[]) => {
+        this.repositories = repositories;
       }
     );
   }

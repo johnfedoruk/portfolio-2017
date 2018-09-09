@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import * as _ from 'lodash';
@@ -21,12 +21,12 @@ export class ProfileService {
     private loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private profile: Profile;
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         // const url: string = `https://tech-profile.firebaseio.com/profiles/${environment.username}.json`;
         const url = `${environment.api}/portfolio/${environment.id}/profile`;
         this.http.get(url).subscribe(
-            (data) => {
-                this.profile = data.json();
+            (data: Profile) => {
+                this.profile = data;
                 this.loaded$.next(true);
             }
         )

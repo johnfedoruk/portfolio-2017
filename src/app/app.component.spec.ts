@@ -2,9 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -76,7 +76,7 @@ describe('AppComponent', () => {
       imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientTestingModule,
         RouterTestingModule,
         GitGraphModule,
         PerfectScrollbarModule,

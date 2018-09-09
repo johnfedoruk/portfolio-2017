@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProfilePictureComponent } from './profile-picture.component';
 import { ProfileService } from '../../../services/profile.service';
 import { SlideshowService } from '../../../services/slideshow.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ProfilePictureComponent', () => {
   let component: ProfilePictureComponent;
@@ -13,7 +13,7 @@ describe('ProfilePictureComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ProfilePictureComponent ],
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ],
       providers: [
         ProfileService,

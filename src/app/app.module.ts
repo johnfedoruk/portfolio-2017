@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -167,11 +167,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
         RouterModule.forRoot(routes),
         GitGraphModule,
         PerfectScrollbarModule,
         MarkdownToHtmlModule,
+        HttpClientModule,
     ],
     providers: [
         ProfileService,

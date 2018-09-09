@@ -5,7 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { GitGraphModule } from '../../modules/git-graph/git-graph.module';
 import { ProfileService } from '../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -23,7 +23,7 @@ describe('ProfileComponent', () => {
       ],
       imports: [
         GitGraphModule,
-        HttpModule
+        HttpClientTestingModule
       ]
     })
     .compileComponents();

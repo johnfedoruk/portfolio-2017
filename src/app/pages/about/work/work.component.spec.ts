@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkComponent } from './work.component';
 import { ProfileService } from '../../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { String2DatePipe } from '../../../pipes/string-2-date.pipe';
 
 describe('WorkComponent', () => {
@@ -19,7 +19,7 @@ describe('WorkComponent', () => {
         ProfileService
       ],
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ]
     })
       .compileComponents();

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CoverPhotoComponent } from './cover-photo.component';
 import { ProfileService } from '../../../services/profile.service';
 import { SlideshowService } from '../../../services/slideshow.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CoverPhotoComponent', () => {
   let component: CoverPhotoComponent;
@@ -17,7 +17,7 @@ describe('CoverPhotoComponent', () => {
         SlideshowService
       ],
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ]
     })
     .compileComponents();

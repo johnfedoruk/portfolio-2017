@@ -5,7 +5,7 @@ import { CoverPhotoComponent } from './cover-photo/cover-photo.component';
 import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
 import { ProfileNavComponent } from './profile-nav/profile-nav.component';
 import { ProfileService } from '../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SlideshowService } from '../../services/slideshow.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -26,7 +26,7 @@ describe('ProfileCoverComponent', () => {
         SlideshowService
       ],
       imports: [
-        HttpModule,
+        HttpClientTestingModule,
         RouterTestingModule
       ]
     })

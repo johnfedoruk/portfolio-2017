@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AboutComponent } from './about.component';
 import { String2DatePipe } from '../../pipes/string-2-date.pipe';
 import { ProfileService } from '../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ContactComponent } from './contact/contact.component';
 import { EducationComponent } from './education/education.component';
 import { OverviewComponent } from '../code/overview/overview.component';
@@ -32,7 +32,7 @@ describe('AboutComponent', () => {
         ProfileService
       ],
       imports: [
-        HttpModule,
+        HttpClientTestingModule,
         RouterTestingModule
       ]
     })

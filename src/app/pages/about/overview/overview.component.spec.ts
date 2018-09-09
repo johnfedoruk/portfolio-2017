@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OverviewComponent } from './overview.component';
 import { ProfileService } from '../../../services/profile.service';
-import { HttpModule } from '@angular/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { String2DatePipe } from '../../../pipes/string-2-date.pipe';
 import { CommitService } from '../../../modules/git-graph/services/commit.service';
 
@@ -21,7 +21,7 @@ describe('OverviewComponent', () => {
         CommitService
       ],
       imports: [
-        HttpModule
+        HttpClientTestingModule
       ]
     })
     .compileComponents();
