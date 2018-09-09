@@ -7,7 +7,7 @@ export const environment = {
     production: false,
     username: 'johnfedoruk',
     id: 0,
-    api: 'http://localhost:3000',
+    api: 'http://localhost:5000/tech-profile/us-central1/api',
     github: 'johnfedoruk',
     npm: 'johnfedoruk',
 };
