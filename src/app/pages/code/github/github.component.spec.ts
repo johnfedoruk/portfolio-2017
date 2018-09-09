@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
 import { GithubComponent } from './github.component';
+import { HttpModule } from '@angular/http';
 
 describe('GithubComponent', () => {
   let component: GithubComponent;
@@ -8,7 +10,11 @@ describe('GithubComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GithubComponent ]
+      declarations: [ GithubComponent ],
+      imports: [
+        MarkdownToHtmlModule,
+        HttpModule
+      ]
     })
     .compileComponents();
   }));

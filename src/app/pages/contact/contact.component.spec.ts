@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
+import { EmailComponent } from './email/email.component';
+import { MessageComponent } from './message/message.component';
+import { MailService } from '../../services/mail.service';
+import { HttpModule } from '@angular/http';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -8,7 +15,20 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
+      declarations: [
+        ContactComponent,
+        EmailComponent,
+        MessageComponent
+      ],
+      providers: [
+        MailService
+      ],
+      imports: [
+        RouterTestingModule,
+        PerfectScrollbarModule,
+        HttpModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SlideshowComponent } from './slideshow.component';
+import { SlideshowService } from '../../services/slideshow.service';
 
 describe('SlideshowComponent', () => {
   let component: SlideshowComponent;
@@ -8,7 +9,10 @@ describe('SlideshowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlideshowComponent ]
+      declarations: [ SlideshowComponent ],
+      providers: [
+        SlideshowService
+      ]
     })
     .compileComponents();
   }));

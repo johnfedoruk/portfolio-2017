@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoverPhotoComponent } from './cover-photo.component';
+import { ProfileService } from '../../../services/profile.service';
+import { SlideshowService } from '../../../services/slideshow.service';
+import { HttpModule } from '@angular/http';
 
 describe('CoverPhotoComponent', () => {
   let component: CoverPhotoComponent;
@@ -8,7 +11,14 @@ describe('CoverPhotoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoverPhotoComponent ]
+      declarations: [ CoverPhotoComponent ],
+      providers: [
+        ProfileService,
+        SlideshowService
+      ],
+      imports: [
+        HttpModule
+      ]
     })
     .compileComponents();
   }));

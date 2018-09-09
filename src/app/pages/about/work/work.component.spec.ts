@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkComponent } from './work.component';
+import { ProfileService } from '../../../services/profile.service';
+import { HttpModule } from '@angular/http';
+import { String2DatePipe } from '../../../pipes/string-2-date.pipe';
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -8,9 +11,18 @@ describe('WorkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkComponent ]
+      declarations: [
+        WorkComponent,
+        String2DatePipe
+      ],
+      providers: [
+        ProfileService
+      ],
+      imports: [
+        HttpModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
