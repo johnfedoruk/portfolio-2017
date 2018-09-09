@@ -15,7 +15,7 @@ before_script:
 script:
   - npm run lint
   - npm run test -- --browsers PhantomJS --watch=false
-  - npm build -- --prod --aot
+  - npm run build -- --prod --aot
 
 deploy:
   provider: firebase
