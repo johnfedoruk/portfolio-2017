@@ -5,7 +5,7 @@
       "public": "dist",
       "predeploy": [
         "npm install",
-        "ng build --prod --aot --env prod"
+        "npm run build -- --prod --aot --env prod"
       ],
       "ignore": [
         "firebase.json",
@@ -24,7 +24,7 @@
       "public": "dist",
       "predeploy": [
         "npm install",
-        "ng build --prod --aot --env devl"
+        "npm run build -- --prod --aot --env devl"
       ],
       "ignore": [
         "firebase.json",
@@ -43,7 +43,7 @@
       "public": "dist",
       "predeploy": [
         "npm install",
-        "ng build --prod --aot --env next"
+        "npm run build -- --prod --aot --env next"
       ],
       "ignore": [
         "firebase.json",
