@@ -1,5 +1,20 @@
 {
   "projects": {
     "default": "tech-profile"
+  },
+  "targets": {
+    "tech-profile": {
+      "hosting": {
+        "devl": [
+          "tech-profile-devl"
+        ],
+        "next": [
+          "tech-profile-next"
+        ],
+        "prod": [
+          "tech-profile"
+        ]
+      }
+    }
   }
 }

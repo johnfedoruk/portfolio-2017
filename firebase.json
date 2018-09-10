@@ -1,20 +1,61 @@
 {
-  "hosting": {
-    "public": "dist",
-    "predeploy": [
-      "npm install",
-      "ng build --prod --aot"
-    ],
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "prod",
+      "public": "dist",
+      "predeploy": [
+        "npm install",
+        "npm run build -- --prod --aot --env prod"
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "devl",
+      "public": "dist",
+      "predeploy": [
+        "npm install",
+        "npm run build -- --prod --aot --env devl"
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "next",
+      "public": "dist",
+      "predeploy": [
+        "npm install",
+        "npm run build -- --prod --aot --env next"
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
 }
