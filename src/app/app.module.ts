@@ -41,6 +41,7 @@ import { PostService } from './services/post.service';
 import { NpmComponent } from './pages/code/npm/npm.component';
 import { GithubComponent } from './pages/code/github/github.component';
 import { MailService } from './services/mail.service';
+import { TimelineService } from './services/timeline.service';
 
 const routes: Routes = [
     {
@@ -178,6 +179,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         SlideshowService,
         PostService,
         MailService,
+        TimelineService,
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
