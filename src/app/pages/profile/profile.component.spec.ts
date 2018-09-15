@@ -6,6 +6,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { GitGraphModule } from '../../modules/git-graph/git-graph.module';
 import { ProfileService } from '../../services/profile.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TimelineService } from '../../services/timeline.service';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -19,7 +20,8 @@ describe('ProfileComponent', () => {
         TimelineComponent
       ],
       providers: [
-        ProfileService
+        ProfileService,
+        TimelineService
       ],
       imports: [
         GitGraphModule,
