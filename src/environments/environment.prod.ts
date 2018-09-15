@@ -5,5 +5,6 @@ export const environment = {
     id: 0,
     api: 'https://us-central1-tech-profile.cloudfunctions.net/api',
     github: 'johnfedoruk',
-    npm: 'johnfedoruk'
+    npm: 'johnfedoruk',
+    twitter: 'johnfedoruk',
 };

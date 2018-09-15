@@ -6,4 +6,5 @@ export const environment = {
     api: 'https://us-central1-tech-profile.cloudfunctions.net/next',
     github: 'johnfedoruk',
     npm: 'johnfedoruk',
+    twitter: 'johnfedoruk',
 };
