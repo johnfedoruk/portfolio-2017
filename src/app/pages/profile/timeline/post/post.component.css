@@ -1,0 +1,45 @@
+:host {
+    text-align: left;
+    display:block;
+    margin-bottom:15px;
+    width: calc( 100% - 40px );
+    background-color:whitesmoke;
+    padding: 12px 20px;
+    border: 1px solid #d3d6da;
+    border-radius: 4px;
+}
+
+.heading {
+    height: 40px;
+    padding-bottom: 12px;
+}
+
+.heading>img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+
+.heading-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.action {
+    vertical-align: top;
+}
+
+.date {
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.content {
+
+}

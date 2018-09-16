@@ -1,3 +1,10 @@
-<p>
-  post works!
-</p>
+<div class="heading">
+  <img src="http://johnfedoruk.ca/php/?content=image&user_id=1&album=Profile%20Photos&image=Smile.jpg" />
+  <div class="heading-text">
+    <a href="/" class="name">John Fedoruk</a> <span class="action">shared a video</span>
+    <div class="date">{{post.created_at | date}}</div>
+  </div>
+</div>
+<div class="content">
+  {{post.text}}
+</div>
