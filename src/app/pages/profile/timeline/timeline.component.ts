@@ -7,7 +7,7 @@ import { TimelineService } from '../../../services/timeline.service';
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
-  
+
   public posts: any[];
 
   constructor(private timeline_service: TimelineService) { }
