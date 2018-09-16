@@ -39,6 +39,7 @@ import { PostService } from './services/post.service';
 import { NpmComponent } from './pages/code/npm/npm.component';
 import { GithubComponent } from './pages/code/github/github.component';
 import { MailService } from './services/mail.service';
+import { PostComponent } from './pages/profile/timeline/post/post.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -71,7 +72,8 @@ describe('AppComponent', () => {
         EmailComponent,
         String2DatePipe,
         NpmComponent,
-        GithubComponent
+        GithubComponent,
+        PostComponent
       ],
       imports: [
         BrowserModule,
